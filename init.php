@@ -125,3 +125,17 @@ define("BASIC_SIGNUP_SHORTCODE","wny_basic_signup");
 
 define("LOGIN_SHORTCODE",		"wny_login");
 
+
+//=====
+
+define("COUNTRIES",				array(
+	"uk" => "United Kingdom",
+	"us" => "United States",
+	"can" => "Canada",
+	"ie" => "Ireland"
+));
+
+define("PRAC_SIGNUP_ACTION",	"practitioner-signup");
+define("PRAC_LOGIN_ACTION",		"practitioner-login");
+define("BASIC_SIGNUP_ACTION",	"basic-signup");
+
