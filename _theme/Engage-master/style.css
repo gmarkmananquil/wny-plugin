@@ -1,0 +1,3913 @@
+ /*
+	Theme Name: WellbeingNearYou.com
+	Theme URI: ProgressiveCyberspace.com
+	Description: A mobile responsive and HTML5 theme built for the Genesis Framework.
+	Author: StudioPress
+	Author URI: ProCyber.UK
+ 
+	Tags: one-column, two-columns, responsive-layout, custom-menu, full-width-template, sticky-post, theme-options, threaded-comments
+	
+	Template: genesis
+	Template Version: 1.0.4
+ 
+	License: GPL-2.0+
+	License URI: http://www.opensource.org/licenses/gpl-license.php
+*/
+
+
+/* Table of Contents
+
+	- HTML5 Reset
+		- Baseline Normalize
+		- Box Sizing
+		- Float Clearing
+	- Defaults
+		- Typographical Elements
+		- Headings
+		- Objects
+		- Forms
+		- Tables
+	- Structure and Layout
+		- Site Containers
+		- Column Widths and Positions
+		- Column Classes
+	- Common Classes
+		- Genesis
+		- Search Form
+		- Titles
+		- WordPress
+	- Widgets
+		- Featured Content
+	- Plugins
+		- Genesis eNews Extended
+		- Genesis Latest Tweets
+		- Gravity Forms
+		- Jetpack
+	- Before Header
+	- Site Header
+		- Title Area
+		- Widget Area
+	- Site Navigation
+		- Header Navigation
+		- Primary Navigation
+	- Content Area
+		- Welcome Message
+		- Entries
+		- After Entry
+		- Pagination
+		- Comments
+	- Sidebar
+	- Site Footer
+	
+	- Columns (ThNrU)
+	- Containers (ThNrU)
+	- Special Text (ThNrU)
+	- Added to Modular Custom CSS (ThNrU)
+	- Plugin code (in STYLE-SHEET only) (ThNrU)
+	- Avatar code (in STYLE-SHEET only) (ThNrU)
+	- Feedback Code (ThNrU)
+	- Generic Code (ThNrU)
+
+	- Media Queries
+		- max-width: 1155px
+		- max-width: 1023px
+		- max-width: 770px
+		- max-width: 767px
+		- max-width: 740px
+		- max-width: 700px
+		- max-width: 650px
+		- max-width: 600px
+		- max-width: 550px
+		- max-width: 500px
+		- max-width: 497px
+		- max-width: 440px
+		- max-width: 380px
+		- max-width: 350px
+		- max-width: 330px
+		- max-width: 320px
+		
+	- Hamburger menu (ThNrU)
+
+	- Callum's code (Practitioner plugin) (ThNrU)
+*/
+
+/*
+HTML5 Reset
+------------------------------------------------------------------------------------------ TherapyNearYou (Engage theme) ---------- */
+
+/* Baseline Normalize
+	normalize.css v2.1.3 | MIT License | git.io/normalize
+----------------------------------- TherapyNearYou (Engage theme) ---------- */
+
+ /* ThNrU-v26, add Google Web-font to stylesheet ... Script / handwriting font: Handlee 400 */ 
+ @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900|Open+Sans:300,400,700,900|Lato::300,400,700,900|Pontano+Sans|Handlee); 
+ /* article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { 
+  display: block 
+  } 
+  */ 
+  audio, canvas, video { 
+  display: inline-block 
+  } 
+  audio:not([controls]) { 
+  display: none; 
+  height: 0 
+  } 
+  [hidden], template { 
+  display: none 
+  } 
+  html { 
+  font-family: sans-serif; 
+  -ms-text-size-adjust: 100%; 
+  -webkit-text-size-adjust: 100% 
+  } 
+  body { 
+  margin: 0 
+  } 
+  a { 
+  background: transparent 
+  } 
+  a:focus { 
+  outline: thin dotted 
+  } 
+  a:active, a:hover { 
+  outline: 0 
+  } 
+  h1 { 
+  font-size: 2em; 
+  margin: .67em 0 
+  } 
+  abbr[title] { 
+  border-bottom: 1px dotted 
+  } 
+  b, strong { 
+  font-weight: 700; /* v117.3 was 900 */
+  } 
+ dfn { 
+  font-style: italic 
+  } 
+ .hr:before, hr:before { 
+  clear: both !important; 
+  } 
+ hr { 
+  clear: both; 
+  padding: 26px 0 0 0; 
+  border: none; 
+  border-bottom: 1px solid #cccccc; 
+  height: 0; 
+  margin: 0 0 13px 0; 
+  background: transparent; 
+  } 
+ .after-hr { 
+  padding: 0; 
+  margin: 0; 
+  height: 13px; 
+  background: transparent; 
+  } 
+ hr.thnru-less-margin { 
+  display: block; 
+  width: 100%; 
+  height: 1px; 
+  background: #cccccc; 
+  border: none; 
+  outline: none; 
+  padding: 0px !important; 
+  margin: 6px 0 13px 0 !important; 
+  } 
+ .gap { 
+  background: transparent; 
+  width: 100%; 
+  height: 15px; 
+  } 
+ hr.thick { 
+  display: block; 
+  clear: both !important; 
+  width: 100%; 
+  height: 10px; 
+  background: #cccccc; 
+  border: none; 
+  outline: none; 
+  padding: 0px !important; 
+  margin: 13px 0 13px 0 !important; 
+  } 
+  mark { 
+  background: #ff0; 
+  color: #000 
+  } 
+  code, kbd, pre, samp { 
+  font-family: monospace, serif; 
+  font-size: 1em 
+  } 
+  pre { 
+  white-space: pre-wrap 
+  } 
+  q { 
+  quotes: "\201C" "\201D" "\2018" "\2019" 
+  } 
+  small { 
+  font-size: 80% 
+  } 
+  sub, sup { 
+  font-size: 75%; 
+  line-height: 0; 
+  position: relative; 
+  vertical-align: baseline 
+  } 
+  sup { 
+  top: -.5em 
+  } 
+  sub { 
+  bottom: -.25em 
+  } 
+  img { 
+  border: 0 
+  } 
+  svg:not(:root) { 
+  overflow: hidden 
+  } 
+  figure { 
+  margin: 0 
+  } 
+  fieldset { 
+  border: 0px solid silver; 
+  margin: 0px; 
+  padding: 0px; 
+  } 
+  legend { 
+  border: 0; 
+  padding: 0 
+  } 
+  button, input, select, textarea { 
+  font-family: inherit; 
+  font-size: 100%; 
+  margin: 0 
+  } 
+  button, input { 
+  line-height: normal 
+  } 
+  button, select { 
+  text-transform: none 
+  } 
+  button, html input[type=button], input[type=reset], input[type=submit] { 
+  -webkit-appearance: button; 
+  cursor: pointer 
+  } 
+  button[disabled], html input[disabled] { 
+  cursor: default 
+  } 
+  input[type=checkbox], input[type=radio] { 
+  box-sizing: border-box; 
+  padding: 0 
+  } 
+  input[type=search] { 
+  -webkit-appearance: textfield; 
+  -moz-box-sizing: content-box; 
+  -webkit-box-sizing: content-box; 
+  box-sizing: content-box 
+  } 
+  input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration { 
+  -webkit-appearance: none 
+  } 
+  button::-moz-focus-inner, input::-moz-focus-inner { 
+  border: 0; 
+  padding: 0 
+  } 
+  textarea { 
+  overflow: auto; 
+  vertical-align: top 
+  } 
+  table { 
+  border-collapse: collapse; 
+  border-spacing: 0 
+  } 
+ /* Box Sizing ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  *, input[type="search"] { 
+  -webkit-box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+  box-sizing: border-box; 
+  } 
+ /* Float Clearing ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  .author-box:before, .clearfix:before, .entry:before, .entry-content:before, .footer-widgets:before, .nav-primary:before, .nav-secondary:before, .pagination:before, .site-container:before, .site-footer:before, .site-header:before, .site-inner:before, .wrap:before { 
+  content: " "; 
+  display: table; 
+  } 
+  .author-box:after, .clearfix:after, .entry:after, .entry-content:after, .footer-widgets:after, .nav-primary:after, .nav-secondary:after, .pagination:after, .site-container:after, .site-footer:after, .site-header:after, .site-inner:after, .wrap:after { 
+  clear: both; 
+  content: " "; 
+  display: table; 
+  } 
+ /* Defaults ------------------------------------------------------------------------------------------ TherapyNearYou (Engage theme) ---------- */ 
+ /* Typographical Elements ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  body { 
+  -webkit-font-smoothing: antialiased; 
+  background-position: center top; 
+  background-position: 20% top; 
+  background-color: #eff3f3; 
+  background-repeat: repeat; 
+  background-size: 100%; 
+  color: #555555; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 16px; 
+  font-weight: 400; 
+  line-height: 1.25em; 
+  } 
+  p { 
+  -webkit-font-smoothing: antialiased; 
+  color: #555555; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 16px; 
+  font-weight: 400; 
+  line-height: 1.25em; 
+  padding: 0px; 
+  } 
+ /* ... ENTRYCONTENT moved up here from below */ 
+  p, .entry-content ol, .entry-content p, .entry-content ul, .quote-caption { 
+  margin: 0 0 12px 0; 
+  color: inherit; 
+  } 
+ p strong, .entry-content ol strong, .entry-content p strong, .entry-content ul strong, .quote-caption strong { 
+  color: #111111; 
+  } 
+  .entry-content ol, .entry-content ul { 
+  padding: 0 0 0 20px; 
+  } 
+  .entry-content ol>li { 
+  list-style-type: decimal; 
+  } 
+  .entry-content ul>li { 
+  list-style-type: disc; 
+  } 
+  .entry-content ol ol, .entry-content ul ul { 
+  margin-bottom: 0; 
+  } 
+  a, button, input:focus, input[type="button"], input[type="reset"], input[type="submit"], textarea:focus, .button { 
+  -webkit-transition: all 0.1s ease-in-out; 
+  -moz-transition: all 0.1s ease-in-out; 
+  -ms-transition: all 0.1s ease-in-out; 
+  -o-transition: all 0.1s ease-in-out; 
+  transition: all 0.1s ease-in-out; 
+  } 
+  ::-moz-selection { 
+  background-color: #0066cc; 
+  color: #fff; 
+  } 
+  ::selection { 
+  background-color: #0066cc; 
+  color: #fff; 
+  } 
+  a { 
+  color: #0066cc; 
+  text-decoration: none; 
+  } 
+  a:hover { 
+  color: #0066cc; 
+  text-decoration: underline; 
+  } 
+  .content a.more-link { 
+  background-color: #eee; 
+  border-radius: 3px; 
+  clear: both; 
+  color: #333; 
+  display: block; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 87%; 
+  font-weight: 500; 
+  margin-top: 32px; 
+  padding: 10px; 
+  text-align: center; 
+  } 
+  .content a.more-link:hover { 
+  background-color: #0066cc; 
+  color: #fff; 
+  } 
+  strong { 
+  font-weight: 700; 
+  } 
+  ol, ul { 
+  margin: 0; 
+  padding-left: 0; 
+  color: inherit; 
+  } 
+  blockquote { 
+  background: none; 
+  border-left: 0px solid #ccc; 
+  margin: 20px 20px 10px 10px; 
+  padding: 0px; 
+  } 
+  blockquote:before { 
+  content: "\201C"; 
+  display: block; 
+  color: #ccc; 
+  content: open-quote; 
+  font-size: 80px; 
+  line-height: 0.1em; 
+  font-style: italic; 
+  font-family: "Helvetica", Helvetica, serif; 
+  left: -20px; 
+  position: relative; 
+  top: 20px; 
+  height: 0; 
+  } 
+  blockquote p { 
+  display: inline-block; 
+  font-family: 'Handlee', Georgia, Times, serif; 
+  font-size: 20px; 
+  font-style: italic; 
+  padding-left: 20px; 
+  } 
+  cite { 
+  font-style: normal; 
+  } 
+  /* Headings ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  h1, h2, h3, h4, h5, h6 { 
+  color: #111111; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-weight: 700; 
+  line-height: 1.2em; 
+  margin: 0 0 8px 0; 
+  } 
+  h1 { 
+  font-size: 26px; 
+  } 
+  h2 { 
+  font-size: 22px; 
+  } 
+  h3 { 
+  font-size: 18px; 
+  } 
+  h4 { 
+  font-size: 16px; 
+  } 
+  h5 { 
+  font-size: 14px; 
+  } 
+  h6 { 
+  font-size: 14px; 
+  } 
+  h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover { 
+  text-decoration: underline; 
+  } 
+  /* Objects ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  embed, iframe, img, object, video, .wp-caption { 
+  max-width: 100%; 
+  } 
+  img { 
+  height: auto; 
+  } 
+  /* Forms ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  input, select, textarea { 
+  font-size: 112%; 
+  font-weight: 400; 
+  padding: 16px; 
+  width: 100%; 
+  background: rgba(240, 255, 255, 1.0); 
+  color: #111111; 
+  -webkit-font-smoothing: antialiased; 
+  border-top: 1px solid #777777; 
+  border-bottom: 1px solid #cccccc; 
+  border-left: 1px solid #cccccc; 
+  border-right: 1px solid #cccccc; 
+  margin: 0px; 
+  } 
+  input:focus, textarea:focus { 
+  border: 1px solid #999; 
+  outline: none; 
+  } 
+  input[type="checkbox"], input[type="image"], input[type="radio"] { 
+  width: auto; 
+  margin: 0 5px 0 2px; 
+  } 
+  ::-moz-placeholder { 
+  color: #666; 
+  font-weight: 400; 
+  opacity: 1; 
+  } 
+  ::-webkit-input-placeholder { 
+  color: #666; 
+  font-weight: 400; 
+  } 
+  button, input[type="button"], input[type="reset"], input[type="submit"], .button, .entry-content .button, .btn { 
+  width: auto; 
+  height: auto; 
+  background: none; 
+  border-radius: 10px; 
+  -moz-border-radius: 10px; 
+  -webkit-border-radius: 10px; 
+  border: 3px solid #0066cc; 
+  padding: 7px 15px 7px 15px; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  text-align: center; 
+  font-weight: 700; 
+  font-size: 87%; 
+  line-height: 14px; 
+  letter-spacing: 0px; 
+  color: #0066cc; 
+  display: inline-block; 
+  } 
+  .btn { 
+  margin-bottom: 10px; 
+  } 
+  button:hover, input:hover[type="button"], input:hover[type="reset"], input:hover[type="submit"], .button:hover, .entry-content .button:hover { 
+  background-color: #ffffff; 
+  color: #0066cc; 
+  text-decoration: underline; 
+  } 
+  .entry-content .button:hover { 
+  color: #fff; 
+  } 
+  .button { 
+  display: inline-block; 
+  } 
+  input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-results-button { 
+  display: none; 
+  } 
+  button.orange { 
+  width: auto; 
+  height: auto; 
+  background: #ddffff; 
+  border-radius: 10px; 
+  -moz-border-radius: 10px; 
+  -webkit-border-radius: 10px; 
+  border: 3px solid #00dcff; 
+  padding: 7px 15px 7px 15px; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  text-align: center; 
+  font-weight: 700; 
+  font-size: 87%; 
+  line-height: 14px; 
+  letter-spacing: 0px; 
+  color: #0066cc; 
+  box-shadow: 0px; 
+  } 
+  button.orange:hover { 
+  color: #0066cc; 
+  text-decoration: underline; 
+  } 
+  /* ThNrU-v55 make delete button */ 
+  button.red { 
+  width: auto; 
+  height: auto; 
+  background: #ffffff; 
+  border-radius: 10px; 
+  -moz-border-radius: 10px; 
+  -webkit-border-radius: 10px; 
+  border: 3px solid #ff0000; 
+  padding: 7px 15px 7px 15px; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  text-align: center; 
+  font-weight: 700; 
+  font-size: 87%; 
+  line-height: 14px; 
+  letter-spacing: 0px; 
+  color: #ff0000; 
+  box-shadow: 0px; 
+  } 
+  button.red:hover { 
+  color: #ff0000; 
+  text-decoration: underline; 
+  } 
+  button.delete { 
+  width: auto; 
+  height: auto; 
+  background: #ffffff; 
+  border-radius: 10px; 
+  -moz-border-radius: 10px; 
+  -webkit-border-radius: 10px; 
+  border: 3px solid #0066cc; 
+  padding: 7px 15px 7px 15px; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  text-align: center; 
+  font-weight: 700; 
+  font-size: 87%; 
+  line-height: 14px; 
+  letter-spacing: 0px; 
+  color: #0066cc; 
+  box-shadow: 0px; 
+  } 
+  button.delete:hover { 
+  text-decoration: underline; 
+  } 
+  /* ... styling for dropdown menu ... ... the word "select" is key to inputting the styling into the html button */ 
+  /* info from: http://cssdeck.com/labs/styling-select-box-with-css3 */ 
+  select, .nav-across-dropdown select { 
+  -webkit-font-smoothing: antialiased; 
+  padding: 3px 8px 3px 8px; 
+  margin: 0; 
+  -webkit-border-radius: 10px; 
+  -moz-border-radius: 10px; 
+  border-radius: 10px; 
+  background: #ffffff; 
+  color: inherit; 
+  border: 2px solid #999999; 
+  outline: none; 
+  display: inline-block; 
+  -webkit-appearance: none; 
+  -moz-appearance: none; 
+  appearance: none; 
+  cursor: pointer; 
+  vertical-align: bottom; 
+  } 
+  /* FONT DIVs BELOW */ 
+  select, input[type=text], input[type=password], input[type=email], input[type=url], input[type=file] { 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  -webkit-font-smoothing: antialiased; 
+  font-size: 100%; 
+  line-height: 1.25em; 
+  font-weight: 400; 
+  color: inherit; 
+  } 
+  .tags input[type=text] { 
+  width: 100%; 
+  } 
+  textarea, textarea#review { 
+  font-family: 'Handlee', Georgia, Times, serif; 
+  text-align: left; 
+  font-size: 112%; 
+  line-height: 1.25em; 
+  font-weight: 400; 
+  font-style: normal; 
+  color: #111111; 
+  padding: 10px; 
+  background: rgba(240, 255, 255, 1.0); 
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.35), 0 0px 0px rgba(0, 0, 0, 1.0); 
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.35), 0 0px 0px rgba(0, 0, 0, 1.0); 
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.35), 0 0px 0px rgba(0, 0, 0, 1.0); 
+  -webkit-font-smoothing: antialiased; 
+  height: 200px; 
+  width: 100%; 
+  box-sizing: border-box; 
+  border-top: 1px solid #777777; 
+  border-bottom: 1px solid #cccccc; 
+  border-left: 1px solid #cccccc; 
+  border-right: 1px solid #cccccc; 
+  -webkit-border-radius: 5px; 
+  -moz-border-radius: 5px; 
+  border-radius: 5px; 
+  margin-left: 0px; 
+  } 
+  /* HEIGHT DIVs BELOW */ 
+  .nav-across-dropdown select { 
+  min-width: 200px; 
+  width: 100%; 
+  height: 35px; 
+  } 
+  select, input[type=text], input[type=password], input[type=email], input[type=url], input[type=file], input[type=tel] { 
+  height: 28px; 
+  width: auto; 
+  margin-right: 5px; 
+  } 
+  /* TEXT-INPUT-FIELDS DIVs BELOW */ 
+  /* ThNrU-v57 add type=tel below, for phone numbers */ 
+  input[type=text], input[type=password], input[type=email], input[type=url], input[type=file], input[type=tel] { 
+  padding: 0 5px 0 5px !important; 
+  background: rgba(240, 255, 255, 1.0); 
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.35), 0 0px 0px rgba(0, 0, 0, 1.0); 
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.35), 0 0px 0px rgba(0, 0, 0, 1.0); 
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.35), 0 0px 0px rgba(0, 0, 0, 1.0); 
+  color: #111111; 
+  -webkit-font-smoothing: antialiased; 
+  border-top: 1px solid #777777; 
+  border-bottom: 1px solid #cccccc; 
+  border-left: 1px solid #cccccc; 
+  border-right: 1px solid #cccccc; 
+  margin: 0px; 
+  } 
+  /* Tables ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  table { 
+  border-collapse: collapse; 
+  border-spacing: 0; 
+  line-height: 2; 
+  margin-bottom: 40px; 
+  width: 100%; 
+  } 
+  tbody { 
+  border-bottom: 1px solid #ddd; 
+  } 
+  th, td { 
+  text-align: left; 
+  } 
+  th { 
+  font-weight: bold; 
+  text-transform: none; 
+  } 
+  td { 
+  border-top: 0px solid #ddd; 
+  padding: 6px 0; 
+  } 
+  /* Structure and Layout ------------------------------------------------------------------------------------------ TherapyNearYou (Engage theme) ---------- */ 
+  /* Site Containers ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  .site-inner, .wrap { 
+  margin: 0 auto; 
+  width: 900px; 
+  } 
+  .engage-landing .site-inner { 
+  max-width: 800px; 
+  } 
+  .site-inner { 
+  background-color: #ffffff; 
+  clear: both; 
+  padding-top: 0px; 
+  border: 1px solid #dddddd; 
+  } 
+  main.content { 
+  padding: 20px; 
+  -webkit-border-radius: 0px; 
+  border-radius: 0px; 
+  } 
+  /* Column Widths and Positions ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  /* Wrapping div for .content and .sidebar-primary */ 
+  .content-sidebar-sidebar .content-sidebar-wrap, .sidebar-content-sidebar .content-sidebar-wrap, .sidebar-sidebar-content .content-sidebar-wrap { 
+  width: 900px; 
+  } 
+  .content-sidebar-sidebar .content-sidebar-wrap { 
+  float: left; 
+  } 
+  .sidebar-sidebar-content .content-sidebar-wrap, .sidebar-content-sidebar .content-sidebar-wrap { 
+  float: right; 
+  } 
+  /* Content */ 
+  .content { 
+  float: right; 
+  padding: 0px 20px 24px; 
+  width: 850px; 
+  } 
+  .sidebar-content-sidebar .content, .sidebar-sidebar-content .content, .content-sidebar-sidebar .content { 
+  width: 700px; 
+  } 
+  .content-sidebar .content { 
+  border-left: none; 
+  float: left; 
+  } 
+  .content-sidebar-sidebar .content { 
+  border-left: none; 
+  float: left; 
+  } 
+  .sidebar-content-sidebar .content { 
+  float: left; 
+  } 
+  .sidebar-content .content { 
+  border-right: none; 
+  } 
+  .sidebar-sidebar-content .content { 
+  border-right: none; 
+  } 
+  .full-width-content .content { 
+  border: none; 
+  width: 100%; 
+  } 
+  /* Primary Sidebar */ 
+  .sidebar-primary { 
+  float: right; 
+  width: 200px; 
+  } 
+  .sidebar-content .sidebar-primary, .sidebar-sidebar-content .sidebar-primary { 
+  float: left; 
+  } 
+  /* Secondary Sidebar */ 
+  .sidebar-secondary { 
+  float: left; 
+  width: 100%; 
+  min-height: 100px !important; 
+  background: #e7e5db; 
+  } 
+  .content-sidebar-sidebar .sidebar-secondary { 
+  float: right; 
+  } 
+  /* Column Classes Link: http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  .five-sixths, .four-sixths, .one-fourth, .one-half, .one-sixth, .one-third, .three-fourths, .three-sixths, .two-fourths, .two-sixths, .two-thirds { 
+  float: left; 
+  margin-left: 2.564102564102564%; 
+  } 
+  .one-half, .three-sixths, .two-fourths { 
+  width: 48.717948717948715%; 
+  } 
+  .one-third, .two-sixths { 
+  width: 31.623931623931625%; 
+  } 
+  .four-sixths, .two-thirds { 
+  width: 65.81196581196582%; 
+  } 
+  .one-fourth { 
+  width: 23.076923076923077%; 
+  } 
+  .three-fourths { 
+  width: 74.35897435897436%; 
+  } 
+  .one-sixth { 
+  width: 14.52991452991453%; 
+  } 
+  .five-sixths { 
+  width: 82.90598290598291%; 
+  } 
+  .first { 
+  clear: both; 
+  margin-left: 0; 
+  } 
+  /* Common Classes ------------------------------------------------------------------------------------------ TherapyNearYou (Engage theme) ---------- */ 
+  /* Genesis ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  .breadcrumb { 
+  border-bottom: 0px dotted #ddd; 
+  color: inherit; 
+  font-size: 75%; 
+  margin-bottom: 0px; 
+  padding-bottom: 0px; 
+  margin: 0 0 5px 0; 
+  } 
+  .archive-description, .author-box { 
+  border-bottom: 1px dotted #ddd; 
+  border-top: 0px dotted #ddd; 
+  margin-bottom: 20px; 
+  padding: 0; 
+  } 
+  .author-box-title { 
+  color: #111111; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 112%; 
+  margin-bottom: 4px; 
+  } 
+  .archive-description p:last-child, .author-box p:last-child { 
+  margin-bottom: 0; 
+  } 
+  /* Search Form ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  .search-form { 
+  overflow: hidden; 
+  } 
+  .entry-content .search-form { 
+  width: 50%; 
+  } 
+  .site-header .search-form { 
+  float: right; 
+  } 
+  .search-form input[type="submit"] { 
+  border: 0; 
+  clip: rect(0, 0, 0, 0); 
+  height: 1px; 
+  margin: -1px; 
+  padding: 0; 
+  position: absolute; 
+  width: 1px; 
+  } 
+  /* Titles ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  .entry-title a, .widget .widget-title a { 
+  color: #111111; 
+  } 
+  .entry-title a:hover { 
+  color: inherit; 
+  text-transform: none; 
+  } 
+  .widget-title { 
+  font-size: 100%; 
+  line-height: 1; 
+  margin-bottom: 8px; 
+  text-align: left; 
+  text-transform: none; 
+  } 
+  .header-widget-area .widget-title { 
+  text-align: left; 
+  } 
+  /* .widget-area */ 
+  .site-header .widget-area { 
+  background: transparent; 
+  padding: 0px; 
+  width: 250px; 
+  } 
+  .entry-title, .welcome-message .widget-title { 
+  font-size: 28px; 
+  font-weight: 700; 
+  color: #111111; 
+  padding: 0px margin: 0px; 
+  } 
+  .after-entry .widget-title { 
+  font-size: 112%; 
+  } 
+  .archive-title { 
+  font-size: 20px; 
+  margin-bottom: 15px; 
+  } 
+  h1.archive-title { 
+  color: inherit; /* 117.4 was orange #ff6634 */
+  } 
+  h1.archive-title:after { 
+  content: url("/image-files/sprites/arrow-curved-darkblue-sm-h18.png"); /* v117.4 was orange */
+  height: 18px; 
+  width: 21px; 
+  padding: 0 0 0 3px; 
+  } 
+  section#text-2 { 
+  width: 100%; 
+  } 
+  /* WordPress ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  #author_pic { 
+  background: transparent; 
+  width: 60px; 
+  height: 60px; 
+  float: left; 
+  margin: 5px 10px 5px 0; 
+  } 
+  /* SEE @MEDIA BELOW */ 
+  #author_pic_feedback { 
+  background: transparent; 
+  width: 60px; 
+  height: 60px; 
+  float: left; 
+  margin: 5px 10px 5px 0; 
+  } 
+  #author_pic_map { 
+  background: transparent; 
+  width: 44px; 
+  height: 44px; 
+  float: left; 
+  margin: 3px 6px 0 0; 
+  } 
+  .avatar { 
+  float: left; 
+  } 
+  .author-box .avatar { 
+  height: 80px; 
+  margin-right: 30px; 
+  width: 80px; 
+  } 
+  .entry-comments .avatar { 
+  height: 50px; 
+  margin: 0 16px 24px 0; 
+  width: 50px; 
+  } 
+  .alignleft .avatar { 
+  margin-right: 24px; 
+  } 
+  .alignright .avatar { 
+  margin-left: 24px; 
+  } 
+  .sticky { 
+  } 
+  img.centered, .aligncenter { 
+  display: block; 
+  margin: 0 auto 24px; 
+  } 
+  img.alignnone { 
+  margin-bottom: 12px; 
+  } 
+  .alignleft { 
+  float: left; 
+  text-align: left; 
+  } 
+  .alignright { 
+  float: right; 
+  text-align: right; 
+  } 
+  a.alignleft, img.alignleft, .wp-caption.alignleft { 
+  margin: 0 24px 24px 0; 
+  } 
+  a.alignright, img.alignright, .wp-caption.alignright { 
+  margin: 0 0 24px 24px; 
+  } 
+  a.alignleft, a.alignright { 
+  max-width: 100%; 
+  } 
+  .entry-content .wp-caption-text { 
+  font-size: 87%; 
+  font-weight: 700; 
+  margin-bottom: 0; 
+  text-align: center; 
+  } 
+  .gallery-caption { 
+  } 
+  /* Widgets ------------------------------------------------------------------------------------------ TherapyNearYou (Engage theme) ---------- */ 
+  .widget_calendar table { 
+  width: 100%; 
+  } 
+  .widget_calendar td, .widget_calendar th { 
+  text-align: center; 
+  } 
+  .widget_calendar tbody tr td a { 
+  font-weight: 700; 
+  background: transparent; 
+  border-radius: 0%; 
+  padding: 0px; 
+  position: relative; 
+  z-index: 999; 
+  } 
+  .widget_calendar tbody tr td a:hover { 
+  font-weight: 700; 
+  background: transparent; 
+  border-radius: 0%; 
+  position: relative; 
+  z-index: 999; 
+  } 
+  .widget, .widget li { 
+  word-wrap: break-word; 
+  } 
+  .widget li { 
+  list-style-type: none; 
+  } 
+  .widget ol>li { 
+  list-style-position: inside; 
+  list-style-type: decimal; 
+  padding-left: 20px; 
+  text-indent: -20px; 
+  } 
+  .widget li li { 
+  padding: 0 0 0 0px; 
+  list-style-type: circle; 
+  list-style-position: inside; 
+  } 
+  .widget ul>li:last-child, .widget p:last-child { 
+  margin-bottom: 7px; 
+  } 
+  p.profile { 
+  font-weight: 700; 
+  font-size: 137%; 
+  margin: 0px 
+  } 
+  /* Toby add Tag Cloud css below, v15, 15-apr-15 */ 
+  .tagcloud a { 
+  font-weight: 700; 
+  font-size: 200%; 
+  line-height: 1.0em; 
+  padding-right: 5px 
+  } 
+  /* Featured Content ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  .featured-content .entry { 
+  border-bottom: 2px solid #f5f5f5; 
+  margin-bottom: 20px; 
+  padding: 0 0 24px; 
+  } 
+  .featured-content .entry-title { 
+  font-size: 75%; 
+  } 
+  /* Plugins ------------------------------------------------------------------------------------------ TherapyNearYou (Engage theme) ---------- */ 
+  /* Genesis eNews Extended ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  .enews-widget { 
+  color: #999; 
+  } 
+  .enews-widget input { 
+  box-shadow: none; 
+  margin-right: -4px; 
+  padding: 14px 24px 15px; 
+  width: 60%; 
+  } 
+  .after-entry .enews-widget input { 
+  border: none; 
+  } 
+  .sidebar .enews-widget input { 
+  margin-right: 0; 
+  padding: 12px 20px 15px; 
+  } 
+  .content .enews-widget input:focus { 
+  border: none; 
+  } 
+  .enews-widget input[type="submit"] { 
+  margin: 0; 
+  padding: 16px 24px 15px; 
+  width: auto; 
+  } 
+  .enews form+p { 
+  margin-top: 24px; 
+  } 
+  /* Gravity Forms ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  div.gform_wrapper input[type="email"], div.gform_wrapper input[type="text"], div.gform_wrapper textarea, div.gform_wrapper .ginput_complex label { 
+  font-size: 100%; 
+  padding: 16px; 
+  } 
+  div.gform_wrapper .ginput_complex label { 
+  padding: 0; 
+  } 
+  div.gform_wrapper li, div.gform_wrapper form li { 
+  margin: 16px 0 0; 
+  } 
+  div.gform_wrapper .gform_footer input[type="submit"] { 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 100%; 
+  } 
+  /* Jetpack ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  img#wpstats { 
+  display: none; 
+  } 
+  /* Site Header ------------------------------------------------------------------------------------------ TherapyNearYou (Engage theme) ---------- */ 
+  .site-header { 
+  min-height: 110px; 
+  width: 100%; 
+  margin: 0 auto; 
+  border-bottom: 1px solid #dddddd; 
+  } 
+  .engage .site-header-banner { 
+  height: 260px; 
+  } 
+  /* Title Area ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  .title-area { 
+  margin: 0 auto; 
+  width: 263px; 
+  height: 73px; 
+  } 
+  .site-title { 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 36px; 
+  font-weight: 400; 
+  line-height: 1; 
+  margin-bottom: 0; 
+  } 
+  .site-title a, .site-title a:hover { 
+  color: #111111; 
+  font-size: 28px; 
+  text-transform: uppercase 
+  } 
+  .site-description { 
+  display: block; 
+  height: 0; 
+  margin-bottom: 0; 
+  text-indent: -9999px; 
+  } 
+  .header-full-width.header-image .site-title a { 
+  background-position: center !important; 
+  margin: 0; 
+  } 
+  /* Logo, hide text */ 
+  .header-image .site-header .wrap { 
+  padding: 26px 0 0 0; 
+  } 
+  .header-image .site-title a { 
+  width: 0px; 
+  height: 0px; 
+  } 
+  .header-image .title-area { 
+  background: url('/image-files/logos/wny-logo-vector-263-57.png') no-repeat; 
+  padding: 0px; 
+  } 
+  /* Full width header, no widgets */ 
+  .header-full-width .title-area, .header-full-width .site-title { 
+  width: 100%; 
+  } 
+  .header-image .site-title a { 
+  display: block; 
+  text-indent: -9999px; 
+  } 
+  /* Widget Area ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  .site-inner .widget-area { 
+  padding: 0px; 
+  margin-bottom: 0px; 
+  } 
+  .sidebar .widget-wrap { 
+  padding: 20px; 
+  -webkit-border-radius: 0px; 
+  border-radius: 0px; 
+  } 
+  .site-header .widget-area { 
+  float: right; 
+  text-align: right; 
+  } 
+  .textwidget { 
+  text-align: left; 
+  } 
+  /* Site Navigation ------------------------------------------------------------------------------------------ TherapyNearYou (Engage theme) ---------- */ 
+  .genesis-nav-menu { 
+  clear: both; 
+  color: #777777; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 75%; 
+  line-height: 1.5; 
+  width: 100%; 
+  font-weight: 700; 
+  } 
+  .genesis-nav-menu.menu-primary { 
+  text-align: center; 
+  } 
+  .genesis-nav-menu .menu-item { 
+  display: inline-block; 
+  margin: 0; 
+  text-align: left; 
+  } 
+  .genesis-nav-menu a { 
+  -webkit-font-smoothing: antialiased; 
+  background: transparent url('/image-files/sprites/point-triangle-15x8.gif') 50% calc(100% + 8px) no-repeat; 
+  color: #111111; 
+  display: block; 
+  font-size: 112%; 
+  letter-spacing: 0px; 
+  padding: 15px; 
+  position: relative; 
+  font-weight: inherit; 
+  } 
+  .genesis-nav-menu a:hover, .genesis-nav-menu .current-menu-item>a, .genesis-nav-menu .sub-menu .current-menu-item>a:hover { 
+  color: #000000; 
+  border-bottom: 0px solid #0084b3; 
+  transition: all .3s ease-in-out; 
+  text-decoration: none; 
+  background: transparent url('/image-files/sprites/point-triangle-15x8.gif') 50% 100% no-repeat; 
+  } 
+  .genesis-nav-menu .sub-menu .current-menu-item>a { 
+  color: #777777; 
+  } 
+  .genesis-nav-menu>.menu-item>a { 
+  text-transform: none; 
+  } 
+  .genesis-nav-menu .sub-menu { 
+  left: -9999px; 
+  opacity: 0; 
+  position: absolute; 
+  width: 200px; 
+  z-index: 99; 
+  } 
+  .genesis-nav-menu .sub-menu a { 
+  background-color: #fff; 
+  border: 1px solid #eee; 
+  border-top: none; 
+  font-size: 87%; 
+  letter-spacing: 0px; 
+  padding: 16px 20px; 
+  position: relative; 
+  width: 200px; 
+  } 
+  .genesis-nav-menu .sub-menu .sub-menu { 
+  margin: -54px 0 0 199px; 
+  } 
+  .genesis-nav-menu .menu-item:hover { 
+  position: static; 
+  } 
+  .genesis-nav-menu .menu-item:hover>.sub-menu { 
+  left: auto; 
+  opacity: 1; 
+  } 
+  .genesis-nav-menu>.first>a { 
+  padding-left: 0; 
+  } 
+  .genesis-nav-menu>.last>a { 
+  padding-right: 0; 
+  } 
+  .genesis-nav-menu>.right { 
+  display: inline-block; 
+  float: right; 
+  letter-spacing: 0px; 
+  list-style-type: none; 
+  padding: 20px 0; 
+  text-transform: none; 
+  } 
+  .genesis-nav-menu>.right>a { 
+  display: inline; 
+  padding: 0; 
+  } 
+  .genesis-nav-menu>.rss>a { 
+  margin-left: 40px; 
+  } 
+  .genesis-nav-menu>.search { 
+  padding: 4px 0 0; 
+  } 
+  /* Site Header Navigation ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  .site-header .sub-menu { 
+  border-top: 1px solid #eee; 
+  } 
+  .site-header .sub-menu .sub-menu { 
+  margin-top: -55px; 
+  } 
+  /* Primary Navigation ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  .nav-primary { 
+  height: 50px; 
+  width: 100%; 
+  margin: 0 auto; 
+  } 
+  /* Responsive Menu ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  /* Content Area ------------------------------------------------------------------------------------------ TherapyNearYou (Engage theme) ---------- */ 
+  /* Entries ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  .entry, .page.page-template-page_blog-php .entry { 
+  border-bottom: 1px dotted #ddd; 
+  padding-bottom: 40px; 
+  margin-bottom: 20px; 
+  } 
+  .content .entry:last-of-type, .page.page-template-page_blog-php .entry:last-of-type { 
+  border: medium none; 
+  margin: 0; 
+  } 
+  .page .entry, .single .entry { 
+  border-bottom: none; 
+  margin-bottom: 40px; 
+  padding: 0; 
+  } 
+  .page.engage-landing .entry { 
+  margin-bottom: 0; 
+  } 
+  .entry-meta { 
+  display: none; 
+  } 
+  .entry-header .entry-meta { 
+  margin-bottom: 24px; 
+  } 
+  .entry-comments-link::before { 
+  content: "/"; 
+  margin: 0 6px 0 2px; 
+  } 
+  .entry-categories, .entry-tags { 
+  display: block; 
+  } 
+  /* After Entry ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  .after-entry { 
+  background-color: none; 
+  margin-bottom: 0px; 
+  padding: 20px 0 0 0; 
+  border-top: 1px solid #cccccc; 
+  } 
+  .after-entry .widget { 
+  margin-bottom: 20px; 
+  } 
+  .after-entry .widget-title { 
+  text-align: left; 
+  text-transform: none; 
+  } 
+  .after-entry p:last-child, .after-entry .widget:last-child { 
+  margin-bottom: 0; 
+  } 
+  .after-entry li { 
+  margin-bottom: 6px; 
+  } 
+  /* Pagination ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  .pagination { 
+  border-bottom: 1px dotted #ddd; 
+  border-top: 1px dotted #ddd; 
+  overflow: hidden; 
+  padding: 20px 0; 
+  } 
+  .archive-pagination { 
+  margin-bottom: 80px; 
+  } 
+  .pagination li { 
+  display: inline; 
+  } 
+  .pagination li a { 
+  background-color: #eee; 
+  border-radius: 3px; 
+  color: #666666; 
+  cursor: pointer; 
+  display: inline-block; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  padding: 8px 12px; 
+  } 
+  .pagination li a:hover, .pagination li.active a { 
+  background-color: #0066cc; 
+  color: #fff; 
+  } 
+  /* Comments ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  .entry-comments, .entry-comments .comment, .entry-comments .comment-reply, .ping-list { 
+  margin-bottom: 40px; 
+  } 
+  .entry-comments .comment, .ping-list { 
+  border-bottom: 1px dotted #ddd; 
+  } 
+  .ping-list { 
+  padding-bottom: 20px; 
+  } 
+  p.form-submit, .entry-comments .children .comment, .entry-comments .comment-author { 
+  margin: 0; 
+  } 
+  .entry-comments .comment { 
+  clear: both; 
+  } 
+  p.comment-meta, p.form-submit { 
+  margin-bottom: 20px; 
+  } 
+  .entry-comments .children .comment { 
+  border: none; 
+  } 
+  .comment-respond label { 
+  display: block; 
+  } 
+  .comment-respond input[type="email"], .comment-respond input[type="text"], .comment-respond input[type="url"] { 
+  width: 50% 
+  } 
+  .comment-list li, .ping-list li { 
+  list-style-type: none; 
+  } 
+  .comment-list ul.children { 
+  margin-left: 40px; 
+  } 
+  .ping-list .reply { 
+  display: none; 
+  } 
+  /* Sidebars ------------------------------------------------------------------------------------------ TherapyNearYou (Engage theme) ---------- */ 
+  .sidebar { 
+  display: inline; 
+  font-size: 87%; 
+  } 
+  .sidebar p:last-child, .sidebar ul { 
+  } 
+  .sidebar .widget { 
+  } 
+  .sidebar .search-form { 
+  width: 100%; 
+  } 
+  .sidebar .featured-content .entry { 
+  border-bottom: 0px solid #f5f5f5; 
+  margin-bottom: 0px; 
+  padding: 0 0 0px; 
+  } 
+  /* Site Footer ------------------------------------------------------------------------------------------ TherapyNearYou (Engage theme) ---------- */ 
+  .site-footer { 
+  background-color: transparent; 
+  /* e7e5db = esc4 beige (use in hamburger mode, below), transparent = looks same as 'body' */ 
+  font-size: 100%; 
+  padding: 40px 0 30px 0; 
+  text-align: center; 
+  margin: 0px auto 0 auto; 
+  width: 100%; 
+  } 
+  .site-footer a { 
+  color: #555555; 
+  } 
+  .site-footer a:hover { 
+  color: #555555; 
+  } 
+  .site-footer p { 
+  margin-bottom: 0; 
+  } 
+  .creds, .creds p { 
+  font-size: 87%; 
+  } 
+  /* ------------------------------ -- Genesis - Engage > ABOVE -- ------------------------------ */ 
+  /* ------------------------------ ------------------------------ ------------------------------ */ 
+  /* ------------------------------ -- ThNrU "columns" > BELOW --- ------------------------------ */ 
+  p.cv-col-left { 
+  width: 20%; 
+  margin-right: 2%; 
+  font-weight: 700; 
+  color: #111111; 
+  } 
+  p.cv-col-right { 
+  width: 78%; 
+  font-weight: 400; 
+  color: inherit; 
+  } 
+  p.cv-col-left, p.cv-col-right { 
+  background: transparent; 
+  float: left; 
+  font-size: 87%; 
+  height: auto; 
+  } 
+  .dynamic-col-20pc-left { 
+  background: transparent; 
+  float: left; 
+  width: 20%; 
+  height: auto; 
+  } 
+  .dynamic-col-20pc-right { 
+  background: transparent; 
+  float: left; 
+  width: 78%; 
+  height: auto; 
+  margin-left: 2%; 
+  margin-bottom: 12px; 
+  } 
+  .static-col-auto { 
+  background: transparent; 
+  float: left; 
+  width: auto; 
+  height: auto; 
+  } 
+  .static-col-20pc-restricted-end, 
+  .static-col-20pc-restricted { 
+  background: transparent; 
+  width: 20%; 
+  height: auto; 
+  } 
+  .static-col-40pc-restricted { 
+  background: transparent; 
+  width: 40%; 
+  height: auto; 
+  } 
+  .static-col-20pc-restricted-end p, 
+  .static-col-20pc-restricted p, .static-col-40pc-restricted p { 
+  height: 30px; 
+  } 
+  .static-col-50pc-left { 
+  float: left; 
+  margin-right: 2% 
+  } 
+  .static-col-50pc-right { 
+  float: right; 
+  margin-left: 2%; 
+  } 
+  .static-col-50pc-left, .static-col-50pc-right { 
+  display: block; 
+  background: transparent; 
+  width: 46%; 
+  height: auto; 
+  padding: 0px; 
+  } 
+  .avatar-frame img { 
+  border: 1px solid #cccccc; 
+  padding: 40px; 
+  background: none; 
+  width: 100%; 
+  height: 100%; 
+  } 
+  .dynamic-col-20pc-left h4, .dynamic-col-20pc-left p, .dynamic-col-20pc-right p { 
+  margin-bottom: 0.5em; 
+  } 
+  .dynamic-col-30pc-left { 
+  background: transparent; 
+  float: left; 
+  width: 30%; 
+  height: auto; 
+  margin-right: 2%; 
+  } 
+  .dynamic-col-30pc-right { 
+  background: transparent; 
+  float: left; 
+  width: 68%; 
+  height: auto; 
+  margin-bottom: 12px; 
+  } 
+  .dynamic-col-30pc-left h4, .dynamic-col-30pc-left p, .dynamic-col-30pc-right p { 
+  margin-bottom: 0.5em; 
+  } 
+  .dynamic-col-25pc-right { 
+  width: 73%; 
+  margin-right: 2%; 
+  } 
+  .dynamic-col-25pc-left { 
+  width: 25%; 
+  } 
+  .search-results-title { 
+  background: transparent; 
+  display: block; 
+  width: 90%; 
+  min-height: 50px; 
+  margin: 0 0 20px 0 !important; 
+  border-bottom: #cccccc solid 1px; 
+  } 
+  .search-results-title h3 { 
+  line-height: 1.20em; 
+  padding: 0; 
+  margin: 0 0 4px 0; 
+  } 
+  .search-results-title p::before { 
+  content: "Location: "; 
+  font-weight: 700; 
+  color: #111111; 
+  } 
+  .search-results-title p { 
+  color: inherit; 
+  font-weight: inherit; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 75%; 
+  line-height: 1.25em; 
+  padding-bottom: 5px; 
+  margin: 0px !important; 
+  } 
+  .thnru-avatar-mini { 
+  float: left; 
+  background: transparent; 
+  width: 40px; 
+  height: 65px; 
+  margin: 0 7px 0 0; 
+  } 
+  /* ------------------------------ -- ThNrU "columns" > ABOVE --- ------------------------------ */ 
+  /* ------------------------------ ------------------------------ ------------------------------ */ 
+  /* ------------------------------ - ThNrU "Containers" > BELOW - ------------------------------ */ 
+  .basicuser-container { 
+  background: #f0ecd9; 
+  width: 100%; 
+  height: auto; 
+  padding: 20px; 
+  overflow: hidden; 
+  } 
+  .feedback-container { 
+  width: auto; 
+  height: auto; 
+  padding: 0px; 
+  margin: 0px; 
+  display: block; 
+  overflow: hidden; 
+  } 
+  .feedback-container h2 { 
+  margin: 0 0 4px 0; 
+  } 
+  .feedback-container h3 { 
+  font-size: 87%; 
+  color: #111111; 
+  font-weight: 700; 
+  margin: 0 0 1px 0; 
+  } 
+  .feedback-container p { 
+  background: transparent; 
+  float: left; 
+  font-size: 75%; 
+  line-height: 1.25em; 
+  color: inherit; 
+  height: auto; 
+  } 
+  .feedback-container p b { 
+  font-size: inherit; 
+  color: #ff0000; 
+  font-weight: inherit; 
+  } 
+  .feedback-container p strong { 
+  color: #111111; 
+  font-weight: 700; 
+  } 
+  .generic-container { 
+  overflow: hidden; 
+  } 
+  #dormant-field-container { 
+  float: none; 
+  width: auto; 
+  } 
+  #dormant-width-100pc { 
+  width: auto; 
+  } 
+  .dormant-select-container { 
+  float: left; 
+  width: auto; 
+  } 
+
+   /* 117.5 not working
+  .dormant-select-container select { 
+	padding: 2px;
+  } 
+  */
+
+  p.approved { 
+  } 
+  p.edit-this { 
+  font-family: 'Handlee', Georgia, Times, serif; 
+  font-size: 125%; 
+  } 
+  .border-box { 
+  clear: both; 
+  border: 1px solid #cccccc; 
+  border-radius: 5px; 
+  padding: 10px; 
+  width: auto; 
+  height: auto; 
+  margin: 13px 0 13px 0; 
+  overflow: hidden; 
+  } 
+  .visible-websites, .visible-smartphones { 
+  position: absolute; 
+  line-height: 1.00em; 
+  } 
+  .visible-websites { 
+  display: block; 
+  top: 45px; 
+  } 
+  .visible-websites p, .visible-smartphones p { 
+  font-size: 87%; 
+  line-height: 1.00em; 
+  text-align: left; 
+  } 
+  .visible-smartphones { 
+  display: none; 
+  top: 10px; 
+  } 
+  .genesis-before-header { 
+  display: block; 
+  width: 100%; 
+  height: 35px; 
+  background: #78ddff; 
+  padding: 10px; 
+  margin: 0 auto; 
+  } 
+  .genesis-before-header p { 
+  text-align: center; 
+  color: white; 
+  font-size: 13px; 
+  line-height: 1.35em; 
+  padding: 0px; 
+  margin: 0px; 
+  font-weight: 700; 
+  opacity: 1.00; 
+  filter: Alpha(opacity=80); 
+  } 
+  .admin-eyes-only { 
+  border: 1px solid #ddd; 
+  padding: 0.75em; 
+  margin: 0.25em 0 0.5em 0; 
+  background: #ddffdd; 
+  clear: both; 
+  } 
+  .wny-button-container { 
+  display: block; 
+  width: 100%; 
+  height: 64px; 
+  background: none; 
+  border: 0px; 
+  padding: 0px; 
+  } 
+  .wny-cropper-container { 
+  max-width: 800px; 
+  min-width: 280px; 
+  height: auto; 
+  background: white; 
+  border: 1px solid #cccccc; 
+  padding: 10px; 
+  margin: 0 auto; 
+  } 
+  .wny-cropper-main { 
+  width: 580px; 
+  height: auto; 
+  background: black; 
+  border: 0px solid #cccccc; 
+  padding: 0px; 
+  margin: 0 0 20px 0; 
+  display: inline-block; 
+  } 
+  .wny-cropper-preview-container { 
+  width: 180px; 
+  height: auto; 
+  float: right; 
+  margin: 0 0 20px 0; 
+  display: inline-block; 
+  } 
+  .wny-cropper-preview-big, .wny-cropper-preview-small { 
+  float: left; 
+  background: black; 
+  border: 0px solid #cccccc; 
+  padding: 0px; 
+  margin: 0 20px 20px 0; 
+  } 
+  .wny-cropper-preview-big { 
+  width: 143px; 
+  height: 143px; 
+  } 
+  .wny-cropper-preview-small { 
+  width: 60px; 
+  height: 60px; 
+  } 
+  .wny-cropper-preview-big img { 
+  } 
+  .wny-cropper-preview-small img { 
+  } 
+  /* ------------------------------ - ThNrU "Containers" > ABOVE - ------------------------------ */ 
+  /* ------------------------------ ------------------------------ ------------------------------ */ 
+  /* ------------------------------ ThNrU "Special text" > BELOW ------------------------------ */ 
+  .search-results-title { 
+  background: transparent; 
+  display: block; 
+  width: 90%; 
+  min-height: 50px; 
+  margin: 0 0 20px 0 !important; 
+  border-bottom: #cccccc solid 1px; 
+  } 
+  .search-results-title h3 { 
+  line-height: 1.20em; 
+  padding: 0; 
+  margin: 0 0 3px 0; 
+  } 
+  .search-results-title p::before { 
+  content: "Location: "; 
+  font-weight: 700; 
+  color: #111111; 
+  } 
+  .search-results-title p { 
+  color: inherit; 
+  font-weight: inherit; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 12px; 
+  line-height: 1.25em; 
+  padding-bottom: 5px; 
+  margin: 0px !important; 
+  } 
+  .search-results-title table { 
+  margin: 0px; 
+  } 
+  .search-results-title table tbody td { 
+  padding: 0px; 
+  border: none!important; 
+  } 
+  .search-results-title table tbody td hr { 
+  padding: 0px; 
+  } 
+  .search-results-title table tbody { 
+  border: none!important; 
+  } 
+  .search-results-title { 
+  margin: 0px; 
+  } 
+  .thnru-avatar-mini { 
+  float: left; 
+  background: #eeeeee; 
+  width: 40px; 
+  height: 40px; 
+  margin: 0 7px 0 0; 
+  } 
+  .thnru-avatar { 
+  float: left; 
+  background: #eeeeee; 
+  width: 80px; 
+  height: 80px; 
+  margin: 0 10px 10px 0; 
+  } 
+  p.mini-text-wordspace { 
+  color: inherit; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 75%; 
+  line-height: 1.25em; 
+  padding: 0px; 
+  margin: 0px !important; 
+  font-weight: inherit; 
+  } 
+  p.mini-text-wordspace a { 
+  padding-left: 5px; 
+  } 
+  p.mini-text-wordspace b { 
+  padding-left: 5px; 
+  font-weight: 700; 
+  color: #111111; 
+  } 
+  h1.basicuser-title { 
+  color: #111111; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-weight: 700; 
+  line-height: 1.2em; 
+  margin: 0 0 8px 0; 
+  font-size: 28px; 
+  } 
+  h1.basicuser-title::before { 
+  content: url('/image-files/avatars/avatar-basicuser-20x20.png'); 
+  padding-right: 5px; 
+  height: auto; 
+  } 
+  h1.basicuser-title b { 
+  color: #9f8f3c; 
+  } 
+  p.basicuser-name { 
+  background: transparent url('/image-files/avatars/avatar-basicuser-20x20.png') left 1px no-repeat; 
+  background-size: 15px 15px; 
+  font-weight: bold; 
+  color: #111111; 
+  padding-left: 19px; 
+  } 
+  p.thnru-helped-with { 
+  color: #111111; 
+  font-weight: 700; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 12px; 
+  line-height: 1.25em; 
+  padding-bottom: 5px; 
+  margin: 0; 
+  } 
+  p.thnru-mini-text { 
+  color: inherit; 
+  font-weight: inherit; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 12px; 
+  line-height: 1.25em; 
+  padding-bottom: 5px; 
+  margin: 0px !important; 
+  } 
+  p.thnru-mini-text strong { 
+  color: #111111; 
+  font-weight: 700; 
+  } 
+  p.thnru-mini-text a { 
+  margin: 0px !important; 
+  } 
+  p.thnru-small-text { 
+  color: inherit; 
+  font-weight: inherit; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 87%; 
+  line-height: 1.25em; 
+  padding-bottom: 5px; 
+  margin: 0px !important; 
+  } 
+  p.thnru-small-text a { 
+  margin: 0px !important; 
+  } 
+  p.thnru-large-text { 
+  color: inherit; 
+  font-weight: inherit; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 112%; 
+  line-height: 1.25em; 
+  padding-bottom: 5px; 
+  margin: 0px !important; 
+  } 
+  span.black-bold { 
+  color: #111111; 
+  font-weight: 700; 
+  } 
+  /* ThNrU-75 added below to make words "Click on a NUMBER below, to open the service" */ 
+  span.blue-bold, 
+  span.blue-bold-tick { 
+  color: #0066cc; 
+  font-weight: 700; 
+  } 
+  span.blue-bold-tick:after { 
+  content: url("/image-files/sprites/tick-blue-sm.png"); 
+  padding: 0 0 0 3px; 
+  } 
+  .dynamic-block { 
+  display: block; 
+  padding: 0px; 
+  margin: 0px; 
+  width: auto; 
+  height: auto; 
+  float: left; 
+  } 
+  .thumbs-up { 
+  display: block; 
+  padding: 0 0 0 4px; 
+  margin: 0px; 
+  width: auto; 
+  height: auto; 
+  float: left; 
+  } 
+  .thumbs-down { 
+  display: block; 
+  padding: 0 0 0 4px; 
+  margin: 3px 0 0 0; 
+  width: auto; 
+  height: auto; 
+  float: left; 
+  } 
+  .dynamic-top-margin-w550 { 
+  margin-top: 0px; 
+  } 
+  /* ---------------------- -------- ThNrU "Special text" > ABOVE ------- ----------------------- */ 
+  /* ---------------------- --------------------------------------------- ----------------------- */ 
+  /* ---------------------- ThNrU "Added to Modular Custom CSS" > BELOW ----------------------- */ 
+  .cleanlogin-container { 
+  margin: 20px auto 0px auto; 
+  max-width: 100%; 
+  position: relative; 
+  overflow: hidden; 
+  padding: 0 20% 0 20%; 
+  -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0); 
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0); 
+  border-radius: 0px; 
+  border: 0px solid #ddd; 
+  } 
+  .cleanlogin-container h4 { 
+  margin-top: 0; 
+  text-align: center; 
+  font-size: 25px; 
+  font-weight: 700; 
+  margin-bottom: 20px; 
+  color: #9f8f3c; 
+  } 
+  .cleanlogin-container h4>small { 
+  margin-top: 5px; 
+  font-size: 20px; 
+  font-weight: 400; 
+  font-style: inherit; 
+  display: block; 
+  } 
+  .cleanlogin-form a.cleanlogin-form-login-link, .cleanlogin-form a.cleanlogin-form-pwd-link, .cleanlogin-preview a.cleanlogin-preview-edit-link { 
+  text-align: left; 
+  float: left; 
+  text-decoration: none; 
+  } 
+  .cleanlogin-form a.cleanlogin-form-login-link:hover, .cleanlogin-form a.cleanlogin-form-pwd-link:hover, .cleanlogin-preview a.cleanlogin-preview-edit-link:hover, .cleanlogin-preview-top a:hover { 
+  /* v103.4 added */ 
+  text-decoration: underline; 
+  } 
+  .cleanlogin-field-remember { 
+  color: #555555; 
+  float: left; 
+  text-align: left; 
+  } 
+  .cleanlogin-field-remember b { 
+  font-weight: 400; 
+  font-size: 75%; 
+  line-height: 0.00em; 
+  } 
+  .cleanlogin-preview-top { 
+  padding-bottom: 36px; 
+  height: 24px; 
+  } 
+  .cleanlogin-preview-top a { 
+  text-align: center; 
+  } 
+  .author_pic_cp_right { 
+  margin: 10px 0 10px 0; 
+  } 
+  .author_pic_cp_right a { 
+  margin: 0 0 15px 0; 
+  } 
+  @media only screen and (max-width: 770px) { 
+  input.cleanlogin-field, .cleanlogin-form a.cleanlogin-form-pwd-link { 
+  text-decoration: underline; 
+  } 
+  } 
+  @media screen and (max-width: 440px) { 
+  .cleanlogin-container { 
+  padding: 0 10% 0 10%; 
+  } 
+  } 
+  @media screen and (max-width: 380px) { 
+  .cleanlogin-container { 
+  padding: 0 0% 0 0%; 
+  } 
+  } 
+  /* ------------------------------ ThNrU "Added to Modular Custom CSS" > ABOVE ------------------------------ */ 
+  /* ------------------------------ ------------------------------------------- ------------------------------ */ 
+  /* ------------------------------ Plugin code (in STYLE-SHEET only) > BELOW ------------------------------ */ 
+  #infobubble-content .place-title { 
+  border: 0px solid #FFF; 
+  font-family: Roboto, Arial, sans-serif; 
+  font-size: 100%; 
+  line-height: 21px; 
+  font-weight: 700; 
+  min-height: 21px; 
+  white-space: normal; 
+  padding-right: 20px; 
+  margin-bottom: 0 !important; 
+  } 
+  #infobubble-content p { 
+  font-size: 75%; 
+  margin: 0; 
+  color: #2C2C2C; 
+  } 
+  .place-description { 
+  font-size: 87%; 
+  line-height: 1.25em; 
+  } 
+  /* ------------------------------ Plugin code (in STYLE-SHEET only) > ABOVE ------------------------------ */ 
+  /* ------------------------------ ------------------------------ ------------------------------ */ 
+  /* ------------------------------ Avatar code (in STYLE-SHEET only) > BELOW ------------------------------ */ 
+  .author_pic_cp { 
+  display: block; 
+  background: transparent; 
+  width: 200px; 
+  height: 200px; 
+  float: left; 
+  margin: 10px 10px 10px 0; 
+  } 
+  .author_pic_cp img { 
+  width: 200px; 
+  height: 200px; 
+  } 
+  .author_pic_cp_right { 
+  display: block; 
+  background: transparent; 
+  width: auto; 
+  height: 200px; 
+  float: left; 
+  margin: 10px 0px 10px 10px; 
+  } 
+  .author_pic_cp_right p { 
+  text-align: left; 
+  } 
+  .author_pic_cp_right p a { 
+  display: block; 
+  } 
+  @media screen and (max-width: 415px) { 
+  .author_pic_cp { 
+  background: transparent; 
+  width: 220px; 
+  height: 220px; 
+  float: left; 
+  margin: 10px 0 10px 0; 
+  } 
+  .author_pic_cp img { 
+  } 
+  .author_pic_cp_right { 
+  background: transparent; 
+  width: auto; 
+  height: auto; 
+  float: left; 
+  margin: 0 0 10px 0; 
+  } 
+  } 
+  #profile_upload_profile_croppable { 
+  width: 558px; 
+  } 
+  #cropper_popup { 
+  padding: 20px; 
+  border: 2px solid black; 
+  width: 650px; 
+  background-color: white; 
+  height: 650px; 
+  overflow-y: auto; 
+  } 
+  .open_cropper_popup { 
+  position: fixed; 
+  top: 25px; 
+  display: block !important; 
+  visibility: visible !important; 
+  } 
+  a#close_crop_popup { 
+  margin-left: 80%; 
+  } 
+  #cropping_tool_link { 
+  display: none; 
+  } 
+  } 
+  /* ------------------------------ Avatar code (in STYLE-SHEET only) > ABOVE ------------------------------ */ 
+  /* ------------------------------ ------------------------------ ------------------------------ */ 
+  /* ------------------------------ ThNrU "Feedback" code > BELOW ------------------------------ */ 
+ /* ThNrU-v79 restructured and added "-overflow" below (based on p.tags) */ 
+  #testimonial-intro-text-overflow, #testimonial-intro-text { 
+  width: auto; 
+  height: auto; 
+  clear: both; 
+  font-size: 75%; 
+  } 
+  #testimonial-intro-text-overflow p, #testimonial-intro-text p { 
+  color: #555555; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: inherit; 
+  line-height: 1.25em; 
+  padding: 0 0 10px 0; 
+  margin: 0px !important; 
+  } 
+  #testimonial-intro-text-overflow p a, #testimonial-intro-text p a { 
+  background: transparent url('/image-files/avatars/avatar-basicuser-sm.png') left center no-repeat; 
+  color: #0066cc; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: inherit; 
+  line-height: 1.25em; 
+  font-weight: 700; 
+  display: block; 
+  float: left; 
+  } 
+  #testimonial-intro-text p b, 
+  #testimonial-intro-text p a { 
+  padding-left: 13px; 
+  margin-right: 5px; 
+  } 
+  #testimonial-intro-text-overflow p a { 
+  padding: 4px 0 4px 13px; 
+  margin-right: 9px; 
+  } 
+ #testimonial-intro-text p b { 
+  background: transparent url('/image-files/avatars/avatar-basicuser-sm.png') left center no-repeat; 
+  color: #111111; 
+  font-size: inherit; 
+  font-weight: 700; 
+  } 
+  #testimonial-intro-text p strong { 
+  font-weight: 700; 
+  color: #111111; 
+  } 
+ .thnru-review-box-sm { 
+  width: 100%; 
+  height: 100%; 
+  background: #f7f7f7; 
+  border-radius: 3px; 
+  -moz-border-radius: 3px; 
+  -webkit-border-radius: 3px; 
+  border-top: #eeeeee solid 1px; 
+  border-left: #dddddd solid 1px; 
+  border-right: #cccccc solid 1px; 
+  border-bottom: #cccccc solid 1px; 
+  padding: 4px 7px 9px 7px; 
+  font-size: 12px; 
+  } 
+  .thnru-review-box-sm hr { 
+  width: 100%; 
+  height: 1px; 
+  background: #cccccc; 
+  border: none; 
+  outline: none; 
+  padding: 0px !important; 
+  margin: 1px 0 2px 0 !important; 
+  } 
+  .thnru-review-box-sm p { 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  text-align: left; 
+  font-size: inherit; 
+  font-weight: 400; 
+  line-height: 1.25em; 
+  color: #111111; 
+  letter-spacing: 0px; 
+  margin: 0px !important; 
+  padding: 3px 0 0 0; 
+  } 
+  .thnru-review-box-sm b { 
+  background: transparent url('/image-files/avatars/avatar-basicuser-sm.png') left center no-repeat; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  text-align: left; 
+  font-size: inherit; 
+  font-weight: 700; 
+  line-height: 1.25em; 
+  color: #111111; 
+  letter-spacing: 0px; 
+  padding: 0 0 0 13px; 
+  } 
+  /* v116.3 add 'orange-mini' below, which was only in @media before */
+ .thnru-button-orange, .thnru-button-orange-mini { float: right; background: #ddffff; border-radius: 10px; -moz-border-radius: 10px; -webkit-border-radius: 10px; height: auto; border: 3px solid #00dcff; margin: 10px 0 0 0; font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; text-align: center; font-weight: 700; letter-spacing: 0px; color: #0066cc; box-shadow: 0px; } 
+  .thnru-button-orange { font-size: 14px; line-height: 14px; padding: 7px 5px 7px 5px; width: 100%; }
+ .thnru-button-orange-mini { font-size: 11.5px; line-height: 11.5px; padding: 6px 10px 5px 10px; /* v116.4 edited */ width: 100%; }
+ .thnru-button-orange a, .thnru-button-orange-mini a { color: #0066cc; } 
+  /* v116.3 add 'orange-mini' above, which was only in @media before */
+ .inside-user-feedback-v34 { background: #ffffff; border-radius: 10px; float: left; width: 100%; height: auto; border: 5px solid #cccccc; padding: 15px; margin: 15px 0 10px 0; font-size: 75%; line-height: 15px; } 
+  .inside-user-feedback-v34 h4 { font-size: inherit; line-height: 1.20em; padding: 0; margin: 0 0 4px; } 
+  .inside-user-feedback-v34 img { width: 40px; height: 40px; margin-right: 5px; } 
+  .inside-user-feedback-v34 hr { 
+  padding: 0px; 
+  } 
+  .testimonial-text { 
+  clear: both; 
+  background: none; 
+  border-left: 0px solid #ccc; 
+  margin: 5px 0 5px 0; 
+  /* ThNrU-v38 was 5px 5px 5px 0 */ 
+  padding: 0px; 
+  width: auto; 
+  } 
+  .testimonial-text:before { 
+  display: block; 
+  color: #ccc; 
+  content: "\201C"; 
+  font-size: 80px; 
+  line-height: 0.1em; 
+  font-style: italic; 
+  font-family: "Helvetica", Helvetica, serif; 
+  left: -10px; 
+  position: relative; 
+  top: 20px; 
+  height: 0px; 
+  } 
+  .testimonial-text:after { 
+  display: block; 
+  color: #ccc; 
+  content: "\201D"; 
+  font-size: 80px; 
+  line-height: 0.1em; 
+  font-style: italic; 
+  font-family: "Helvetica", Helvetica, serif; 
+  float: right; 
+  position: relative; 
+  top: 0px; 
+  height: 0px; 
+  margin-right: 10px; 
+  } 
+  .testimonial-text p { 
+  background: none; 
+  display: inline-block; 
+  font-family: 'Handlee', Georgia, Times, serif; 
+  font-size: 20px; 
+  font-style: normal; 
+  padding: 0 30px 0 30px; 
+  font-weight: inherit; 
+  color: #222222; 
+  } 
+  .thnru-points { 
+  width: auto; 
+  height: auto; 
+  margin: -2px 0 2px 0; 
+  padding: 0px; 
+  } 
+  .thnru-points a { 
+  background: transparent url('/image-files/sprites/tick-blue-sm.png') right top no-repeat; 
+  padding: 0 15px 0 0; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  text-align: left; 
+  font-size: 20px; 
+  font-weight: 700; 
+  line-height: 1.25em; 
+  letter-spacing: 0px; 
+  margin: 0px; 
+  } 
+  /* ThNrU-v35 add "Ticks" below ... ThNrU v34, added below */ 
+  p.tags { 
+  background: transparent url('/image-files/sprites/tick-blue-tags.png') right top no-repeat; 
+  color: #111111; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: inherit; 
+  line-height: 1.0em; 
+  /* ThNrU v23, was 14px */ 
+  font-weight: 700 !important; 
+  padding: 4px 12px 4px 0px; 
+  /* ThNrU v35, was 4px 8px 4px 0 */ 
+  float: left; 
+  display: block; 
+  height: 25px !important; 
+  margin-right: 9px !important; 
+  margin-bottom: 0px !important; 
+  /* ThNrU-v54 added */ 
+  } 
+  /* + + + + + + ThNrU-v62 edited "below" to make special dropdown graphics + + + + + + */ 
+ /* ThNrU-v46, BELOW "sub-list" for Endorsements */ 
+  .skills-sublist, .skills-sublist-basicusers { 
+  text-align: left; 
+  display: block; 
+  width: 100%; 
+  background: #ffffdd; 
+  border-top: #eeeeee solid 0px; 
+  border-left: #dddddd solid 1px; 
+  border-right: #dddddd solid 1px; 
+  border-bottom: #cccccc solid 1px; 
+  padding: 10px 10px 0px 10px; 
+  color: #333333 !important; 
+  margin-top: 0px; 
+  margin-bottom: 10px; 
+  border-bottom-left-radius: 3px; 
+  border-bottom-right-radius: 3px; 
+  } 
+  .skills-sublist ul, .skills-sublist-basicusers ul { 
+  margin: 0px; 
+  padding-left: 0px !important; 
+  } 
+  .skills-sublist ul li { 
+  font-size: 100%; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  line-height: 1.25em; 
+  font-weight: 700; 
+  list-style-type: none !important; 
+  height: 20px !important; 
+  padding: 0 !important; 
+  margin: 0 0 10px 0; 
+  } 
+  .skills-sublist ul li a { 
+  margin: 0 0 0 16px; 
+  } 
+  .skills-sublist-basicusers ul li { 
+  background: transparent url('/image-files/avatars/avatar-basicuser-sm.png') left 3px no-repeat; 
+  font-size: 75%; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  line-height: 1.25em; 
+  font-weight: 700; 
+  list-style-type: none !important; 
+  height: 20px !important; 
+  padding: 0 0 0 9px !important; 
+  margin: 0 0 10px 0; 
+  } 
+  /* ThNrU-v46, ABOVE "sub-list" for Endorsements */ 
+ .skills-narrow-feedback { 
+  display: block; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 75%; /* Edited by TB, 08-Feb-2018, was 14px */ 
+  line-height: 1.25em; 
+  } 
+  .skills-wide { 
+  } 
+  /* ThNrU-v62 edited "above" to make special dropdown graphics */ 
+  .skills-narrow, .skills-narrow-dropdown, .skills-wide, .skills-wide-dropdown { 
+  display: block; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  font-size: 18px; 
+  line-height: 1.25em; 
+  } 
+  .skills-narrow-feedback, 
+  .skills-narrow, .skills-narrow-dropdown { 
+  font-weight: 700; 
+  float: right; 
+  text-align: right; 
+  width: 15%; 
+  /* edited by TB, 8-Feb-2018. Was 90px */ 
+  } 
+  .skills-wide, .skills-wide-dropdown { 
+  font-weight: 400; 
+  text-align: left; 
+  width: -moz-calc(100% - 90px); 
+  width: -webkit-calc(100% - 90px); 
+  width: -o-calc(100% - 90px); 
+  width: calc(100% - 90px); 
+  } 
+  .skills-narrow-feedback ul, 
+  .skills-narrow ul, .skills-narrow-dropdown ul, .skills-wide ul, .skills-wide-dropdown ul { 
+  list-style-type: none !important; 
+  margin: 0px; 
+  padding-left: 0px !important; 
+  } 
+  .skills-narrow ul li, .skills-narrow-dropdown ul li, .skills-wide ul li, .skills-wide-dropdown ul li { 
+  list-style-type: none !important; 
+  min-height: 35px !important; 
+  padding-top: 5px !important; 
+  color: #333333 !important; 
+  } 
+  .skills-narrow ul li, .skills-wide ul li { 
+  margin: 0 0 0px 0; 
+  margin-top: 10px; 
+  } 
+  .skills-narrow-dropdown ul li, .skills-wide-dropdown ul li { 
+  margin: 0; 
+  } 
+  .skills-narrow-feedback ul li { 
+  list-style-type: none !important; 
+  height: 35px !important; 
+  padding-top: 8px !important; 
+  margin: 0 0 10px 0; 
+  color: #0066cc !important; 
+  } 
+  .skills-wide ul li, .skills-wide-dropdown ul li { 
+  background: #f7f7f7; 
+  border-top: #eeeeee solid 1px; 
+  border-left: #dddddd solid 1px; 
+  border-right: #cccccc solid 0px; 
+  padding-left: 10px; 
+  height: 35px; 
+  } 
+  .skills-wide ul li { 
+  border-bottom: #cccccc solid 1px; 
+  border-top-left-radius: 3px; 
+  border-bottom-left-radius: 3px; 
+  border-top-right-radius: 0px; 
+  border-bottom-right-radius: 0px; 
+  } 
+  .skills-wide-dropdown ul li { 
+  border-bottom: #eeeeee solid 1px; 
+  border-top-left-radius: 3px; 
+  border-bottom-left-radius: 0px; 
+  border-top-right-radius: 0px; 
+  border-bottom-right-radius: 0px; 
+  } 
+  /* ThNrU-v48 add space left of "plus symbol" add.gif */ 
+  .skills-narrow-feedback ul li img, .skills-wide ul li img, .skills-wide-dropdown ul li img { 
+  padding-left: 5px; 
+  } 
+  .skills-narrow ul li, .skills-narrow-dropdown ul li { 
+  background: #ffffcc; 
+  border-top: #eeeeee solid 1px; 
+  border-left: #eeeeee solid 0px; 
+  border-right: #cccccc solid 1px; 
+  padding-right: 7px; 
+  } 
+  .skills-narrow ul li { 
+  border-bottom: #cccccc solid 1px; 
+  border-top-right-radius: 3px; 
+  border-bottom-right-radius: 3px; 
+  } 
+  .skills-narrow-dropdown ul li { 
+  border-bottom: #cccccc solid 0px; 
+  border-top-right-radius: 3px; 
+  border-bottom-right-radius: 0px; 
+  } 
+  /* ThNrU-v62 edited "above" to make special dropdown graphics */ 
+  .skills-narrow ul li:after, .skills-narrow-dropdown ul li:after { 
+  content: url("/image-files/sprites/tick-blue-sm.png"); 
+  padding: 0 0 0 3px; 
+  } 
+ /* ThNrU-v62 edited "above" to make special dropdown graphics */ 
+ .skills-narrow-feedback ul li { 
+  background: #ddffff; 
+  border-top-right-radius: 3px; 
+  border-bottom-right-radius: 3px; 
+  border-top: cyan solid 1px; 
+  border-left: cyan solid 0px; 
+  border-right: cyan solid 1px; 
+  border-bottom: cyan solid 1px; 
+  padding-right: 7px; 
+  } 
+  .skills-narrow-feedback ul li a { 
+  color: #ffffff; 
+  } 
+  .endorse-pill, .endorse-pill-dropdown { 
+  min-height: 35px !important; 
+  width: 100%; 
+  padding: 5px 7px 5px 8px !important; 
+  background: #f7f7f7 url('/image-files/sprites/edge-yellow-w90.gif') right top repeat-y; 
+  border-top: #eeeeee solid 1px; 
+  border-left: #dddddd solid 1px; 
+  border-right: #cccccc solid 1px; 
+  display: block; 
+  overflow: auto; 
+  } 
+  .endorse-pill { 
+  border-radius: 3px; 
+  border-bottom: #cccccc solid 1px; 
+  margin: 0 0 10px 0; 
+  } 
+  .endorse-pill-dropdown { 
+  border-top-left-radius: 3px; 
+  border-top-right-radius: 3px; 
+  border-bottom-left-radius: 0px; 
+  border-bottom-right-radius: 0px; 
+  border-bottom: #dddddd solid 1px; 
+  margin: 0; 
+  } 
+  p.endorse-number-cp, 
+  p.endorse-number { 
+  font-weight: 700; 
+  float: right; 
+  width: 90px; 
+  text-align: right; 
+  } 
+  p.endorse-number:after { 
+  content: url("/image-files/sprites/tick-blue-sm.png"); 
+  padding: 0 0 0 3px; 
+  } 
+  p.endorse-skill { 
+  font-weight: 400; 
+  float: left; 
+  width: -moz-calc(100% - 90px); 
+  width: -webkit-calc(100% - 90px); 
+  width: -o-calc(100% - 90px); 
+  width: calc(100% - 90px); 
+  text-align: left; 
+  } 
+  p.endorse-number, p.endorse-skill { 
+  line-height: 1.25em; 
+  font-size: 18px; 
+  margin: 0px !important; 
+  color: #333333 !important; 
+  } 
+  p.endorse-number-cp img, 
+  p.endorse-skill img { 
+  padding-left: 5px; 
+  } 
+  p.endorse-number-cp { 
+  line-height: 1.25em; 
+  font-size: 15px; 
+  margin: 0px !important; 
+  color: #333333 !important; 
+  padding: 3px 0 0 0; 
+  } 
+ .endorse-sublist, .endorse-sublist-basicusers { 
+  text-align: left; 
+  display: block; 
+  width: 100%; 
+  background: #f0feff; 
+  border-top: #eeeeee solid 0px; 
+  border-left: #dddddd solid 1px; 
+  border-right: #cccccc solid 1px; 
+  border-bottom: #cccccc solid 1px; 
+  padding: 10px 10px 0px 10px; 
+  margin-top: 0px; 
+  margin-bottom: 10px; 
+  border-bottom-left-radius: 3px; 
+  border-bottom-right-radius: 3px; 
+  overflow: auto; 
+  } 
+  .endorse-sublist p { 
+  min-height: 28px; 
+  padding: 0 0 5px 0 !important; 
+  margin: 0 0 10px 0px; 
+  display: block; 
+  } 
+  .endorse-sublist-basicusers p { 
+  min-height: 20px !important; 
+  background: transparent url('/image-files/avatars/avatar-basicuser-sm.png') left 3px no-repeat; 
+  padding: 0 0 8px 13px !important; 
+  margin: 0 0 10px 0; 
+  } 
+ .endorse-sublist p, .endorse-sublist-basicusers p { 
+  overflow: auto; 
+  font-size: 75%; 
+  font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif; 
+  line-height: 1.25em; 
+  font-weight: 400; 
+  border-bottom: #c4e7ea solid 1px; 
+  } 
+ .endorse-sublist-basicusers p a { 
+  font-weight: 700; 
+  padding-right: 3px; 
+  } 
+  .endorse-sublist p a { 
+  font-weight: 700; 
+  font-size: 15px; 
+  padding-right: 6px; 
+  } 
+  .endorse-sublist p img { 
+  float: left; 
+  width: 24px; 
+  height: 24px; 
+  margin: 0 7px 0 0; 
+  padding: 0; 
+  } 
+ /* ------------------------------ ThNrU "Feedback" code > ABOVE ------------------------------ */ 
+  /* ------------------------------ ------------------------------ ------------------------------ */ 
+  /* ------------------------------ ---- Generic code > BELOW ---- ------------------------------ */ 
+ .vanishing-line hr { 
+  display: none; 
+  } 
+  .text-align-left { 
+  text-align: left; 
+  } 
+  .text-align-right { 
+  text-align: right; 
+  } 
+  .text-align-center { 
+  text-align: center; 
+  } 
+  .float-left { 
+  float: left; 
+  } 
+  .float-right { 
+  float: right; 
+  } 
+  .margin-left-bottom { 
+  margin: 0 0 15px 25px; 
+  } 
+  .margin-top-15 { 
+  margin-top: 15px; 
+  } 
+  .margin-bottom-15 { 
+  margin-bottom: 15px; 
+  } 
+  .margin-top-bottom-15 { 
+  margin-top: 15px; 
+  margin-bottom: 15px; 
+  } 
+  .margin-15 { 
+  margin: 15px; 
+  } 
+  .margin-top-10 { 
+  margin-top: 10px; 
+  } 
+  .margin-right-10 { 
+  margin-right: 10px; 
+  } 
+  .margin-right-25 { 
+  margin-right: 25px; 
+  } 
+  .width-150 { 
+  width: 150px; 
+  } 
+  .width-100pc { 
+  width: 100%; 
+  } 
+  .width-90pc { 
+  width: 90%; 
+  } 
+  .width-80pc { 
+  width: 80%; 
+  } 
+  .width-20pc { 
+  width: 20%; 
+  } 
+  .width-50pc { 
+  width: 50%; 
+  } 
+  .clear-both { 
+  clear: both; 
+  } 
+  .border-top-dashed { 
+  border-top: #cccccc dashed 1px; 
+  } 
+  .padding-top-10 { 
+  padding-top: 10px; 
+  } 
+  /* ThNrU-v72 added below */ 
+  .padding-left-10 { 
+  padding-left: 10px; 
+  } 
+ /* ------------------------------ ---- Generic code > ABOVE ---- ------------------------------ */ 
+  /* Added by Callum for compatibility with Practitioner plugin */ 
+  .cpanel_widget_links { 
+  padding-top: 1em; 
+  padding-bottom: 1em; 
+  } 
+  .profile_form_section { 
+  margin-bottom: 2em; 
+  } 
+  .entry-content hr { 
+  clear: both; 
+  } 
+  input[type=file] { 
+  border: 0px; 
+  box-shadow: none; 
+  } 
+  .spinner_loading { 
+  text-align: center; 
+  border: 0px solid #999; 
+  padding: 2em; 
+  display: none; 
+  } 
+ /* initially hide */ 
+  .skills-sublist, .skills-sublist-basicusers { 
+  display: none; 
+  } 
+ /* if i remove this, the narrow column seems to drop down. */ 
+  .skills-wide, .skills-wide-dropdown { 
+  float: left; 
+  } 
+ .hidden-skills-sublist ul { 
+  clear: both; 
+  } 
+  label.error, .check_exists_invalid { 
+  font-size: 14px; 
+  color: red; 
+  font-weight: normal; 
+  display: none; 
+  padding: 3px; 
+  } 
+  .check_exists_valid { 
+  display: none !important; 
+  } 
+  .hidden-skills-sublist { 
+  clear: both; 
+  } 
+  .page-id-950 div.skills-narrow-feedback { 
+  margin-top: 10px; 
+  } 
+  .feedback-container.width-100pc { 
+  width: 80%; 
+  } 
+  .toggle_endorsement_button { 
+  cursor: pointer; 
+  } 
+  .toggle_endorsement_button:hover { 
+  text-decoration: underline; 
+  } 
+  div#condition_row_template { 
+  display: none; 
+  } 
+  .main-place-infobubble-content img { 
+  width: 44px; 
+  height: 44px; 
+  float: left; 
+  margin-right: 10px; 
+  } 
+ /* don't show default jquery validate error on problem tags [TB v101 corrected error] */ 
+  .problem-box-container label.error { 
+  display: none !important; 
+  } 
+  .review_condition_validation_error { 
+  font-size: 75%; 
+  color: red; 
+  font-weight: normal; 
+  display: block; 
+  padding-bottom: 20px; 
+  } 
+  .condition_row>div { 
+  padding-bottom: 20px; 
+  } 
+  p.place-title { 
+  font-weight: bold; 
+  } 
+  a { 
+  cursor: pointer; 
+  } 
+  .cleanlogin-container { 
+  border: 0px !important; 
+  box-shadow: 0px 0px 0px #fff !important; 
+  margin-left: 0px !important; 
+  } 
+  span.textarea_feedback { 
+  padding-bottom: 4px; 
+  font-size: 75%; 
+  display: block; 
+  } 
+  .feedback-container .static-col-auto { 
+  max-width: 260px; 
+  } 
+  .page-id-1175 main.content { 
+  background-color: #ffffdd; 
+  /* [TB v101 edit] */ 
+  } 
+  .page-id-63 main.content { 
+  background-color: #ffffdd; 
+  } 
+  .h3_endorsments a { 
+  color: #111111; 
+  } 
+  div#ui-datepicker-div { 
+  display: none; 
+  } 
+ /* TB restore from BitBucket. CR force some absolute tags to be relative in certain conditions (e.g. Country Header Widget) */ 
+  .force-relative { 
+  position: relative !important; 
+  } 
+  .visible-websites.force-relative { 
+  position: relative !important; 
+  height: auto; 
+  top: auto; 
+  } 
+  .visible-smartphones.force-relative { 
+  position: relative !important; 
+  height: auto; 
+  top: auto; 
+  } 
+  .wnyp_search_result .distance { 
+  color: #000!important; 
+  } 
+  div.skills-wide { 
+  width: 85%!important; 
+  /* Edited by TB, 08-Feb-2018, was 90% */ 
+  } 
+  .skills-narrow { 
+ } 
+  .small-avatar { 
+  width: 17px; 
+  height: 17px; 
+  margin-right: 3px; 
+  vertical-align: middle; 
+  display: inline-block; 
+  } 
+  #email-validated-container { 
+  padding-top: 100px; 
+  } 
+  #email-validated-container h3 { 
+  font-family: arial; 
+  } 
+ /* basic form error */ 
+  .well.error { 
+  margin-bottom: 10px; 
+  list-style: none; 
+  font-size: 75%; 
+  color: red; 
+  font-weight: normal; 
+  padding: 0px; 
+  } 
+  #login-container { 
+  text-align: left; 
+  } 
+  #login-container .login-footer { 
+  clear: both; 
+  } 
+  #login-container .avatar-login { 
+  width: 150px; 
+  } 
+  form.cleanlogin-form fieldset { 
+  border: none!important; 
+  } 
+  form.cleanlogin-form { 
+  width: 75%; 
+  margin: 20px 0px; 
+  } 
+  #login-container .login-top { 
+  width: 100%; 
+  border-bottom: 1px solid #ccc; 
+  margin-top: 0px; 
+  margin-bottom: 13px; 
+  text-align: left; 
+  height: auto; 
+  padding: 0 0 26px 0; 
+  } 
+ /* ------------------------------ ------------------------------ ------------------------------ */ 
+ /* ========================================================= */ 
+  /* ========================================================= */ 
+  /* ========================================================= */ 
+  /* NEW CODE version "ESC" below ====== Use for new sidebar */ 
+  /* ========================================================= */ 
+  /* ========================================================= */ 
+  /* ========================================================= */ 
+  .esc-container { 
+  background: cyan; 
+  padding: 0px; 
+  border: 1px solid #dddddd; 
+  margin: 20px auto; 
+  width: 900px; 
+  display: block; 
+  height: auto; 
+  overflow: hidden; 
+  } 
+  .esc-page-container { 
+  width: 700px; 
+  float: left; 
+  display: inline-block; 
+  border: 0px; 
+  } 
+  .esc-page { 
+  background: #fff; 
+  padding: 20px; 
+  margin-bottom: 0px; 
+  margin-top: 0px; 
+  overflow: hidden; 
+  border: 0px; 
+  } 
+  .esc-sidebar-container { 
+  background: white; 
+  width: 198px; 
+  float: right; 
+  display: inline-block; 
+  padding: 20px; 
+  border: 0px; 
+  } 
+  .esc-sidebar-profile { 
+  width: 75%; 
+  display: inline-block; 
+  float: left; 
+  padding: 0; 
+  margin: 0 0 10px 0; 
+  border-bottom: 1px solid #ccc; 
+  padding-bottom: 0px; 
+  max-width: 160px; 
+  } 
+  .esc-sidebar-profile-under { 
+  width: 20%; 
+  padding: 0; 
+  margin: 0 0 10px 0; 
+  border-bottom: 0px solid #ccc; 
+  padding-bottom: 0px; 
+  } 
+  .esc-sidebar-profile img { 
+  width: 100%; 
+  } 
+  .esc-sidebar-profile-under img { 
+  width: 95%; 
+  } 
+  h2.esc-sidebar { 
+  font-size: 15px; 
+  width: 100%; 
+  display: block; 
+  color: #111111; 
+  } 
+  h3.esc-sidebar-bold, h3.esc-sidebar-normal { 
+  width: 100%; /* Toby 22-mar-18; added */ 
+  font-size: 13px; 
+  margin: 0px; 
+  display: block; 
+  float: left; 
+  } 
+  h3.esc-sidebar-bold { 
+  font-weight: 700; 
+  color: #111111; 
+  } 
+  h3.esc-sidebar-normal { 
+  font-weight: 400; 
+  color: #555555; 
+  margin-bottom: 7px; 
+  } 
+  p.esc-sidebar a, h3.esc-sidebar-normal a, h3.esc-sidebar-bold a { 
+  font-weight: 700; 
+  padding-right: 0px; 
+  } 
+  p.esc-sidebar { 
+  font-size: 13px; 
+  color: #555555; 
+  margin-bottom: 7px; 
+  } 
+  .esc-sidebar-profile-under .esc-mini-endorse p { 
+  width: 95%; 
+  } 
+  .esc-mini-endorse p { 
+  font-size: 12px; 
+  color: #333333; 
+  margin-bottom: 7px; 
+  background: #f7f7f7; 
+  width: 100%; 
+  display: block; 
+  padding: 4px 5px 0px 5px; 
+  overflow: hidden; 
+  border-radius: 2px; 
+  border-bottom: 1px solid #ccc; 
+  border-top: 1px solid #eee; 
+  border-left: 1px solid #ddd; 
+  border-right: 1px solid #ccc; 
+  font-weight: 400; 
+  height: 22px; 
+  } 
+  .esc-mini-endorse p:after { 
+  content: url('/image-files/sprites/tick-blue-tiny-crop.png'); 
+  padding: 0 0 0 3px; 
+  float: right; 
+  width: 10px; 
+  background: transparent; 
+  } 
+  h3.esc-sidebar-bold, h3.esc-sidebar-normal, p.esc-sidebar { 
+  overflow: hidden; 
+  white-space: normal; 
+  float: left; 
+  padding-right: 0px; 
+  } 
+  .esc-container-left { 
+  float: left; 
+  width: 45%; 
+  } 
+  .esc-container-right { 
+  float: right; 
+  width: 55%; 
+  } 
+  .esc-container-left, .esc-container-right { 
+  overflow: hidden; 
+  } 
+ .esc-padding-top-11 { 
+  display: block; 
+  padding: 11px 0 0 0; 
+  } 
+  .esc-container-contact { 
+  float: right; 
+  width: 73%; 
+  background: none; 
+  display: inline-block; 
+  } 
+  #author_pic_contact_esc { 
+  background: none; 
+  width: 25%; 
+  height: auto; 
+  float: left; 
+  margin: 5px 2% 5px 0; 
+  float: left; 
+  } 
+ /* [BELOW] ESC Page Content - Not Sidebar code ... Not active when given to WNY (7-Feb-18) */ 
+  h2.esc-smartphone-top-border { 
+  margin-top: 20px; 
+  padding: 11px 0 0 0; 
+  border-top: 0px solid #ccc; 
+  width: 100%; 
+  display: block; 
+  overflow: hidden; 
+  } 
+ .esc-image-gallery { 
+  width: 100%; 
+  height: 200px; 
+  display: block; 
+  overflow: hidden; 
+  margin: 15px 0; 
+  } 
+  .esc-image-one { 
+  padding: 0px; 
+  margin: 0px; 
+  border: 0px; 
+  width: 25%; 
+  height: auto; 
+  display: inline-block; 
+  float: left; 
+  } 
+  .esc-image-one img { 
+  } 
+  /* [ABOVE] ESC Page Content - Not Sidebar code ... Not active when given to WNY (7-Feb-18) */ 
+ p.esc-col-half1, p.esc-col-half2 { 
+  width: 48%; 
+  margin-right: 2%; 
+  font-weight: 400; 
+  color: #555555; 
+  float: left; 
+  } 
+  .vanishing-line-w650-esc hr { 
+  display: none; 
+  } 
+  .esc-sidebar-under { width: 100%!important; height: 340px; overflow:hidden; position: relative; background: #e7e5db; padding:20px; } 
+  .esc-sidebar-content{ height: 300px; overflow: hidden; width: 96%; display: block; position: absolute; } 
+  .widget_practitioner_list_widget .right,.esc-sidebar-under .right{ background: url(/image-files/right.png) no-repeat; width:30px; height: 50px; right:20px; margin-top:60px; cursor: pointer; position: absolute; } 
+ .widget_practitioner_list_widget .left, .esc-sidebar-under .left{ background: url(/image-files/left.png) no-repeat; width:30px; height: 50px; left:20px; cursor: pointer; margin-top:60px; position: absolute; } 
+  .esc-sidebar-under .right:hover { 
+  background-position-x: 2px; 
+  } 
+  .esc-sidebar-under .left:hover { 
+  background-position-x: -2px; 
+  } 
+ .widget_practitioner_list_widget .disabled, .esc-sidebar-under .disabled{ display:none!important; } 
+  .esc-sidebar-profile-item { 
+  height: 340px!important; 
+  width:140px!important; 
+  padding: 0px; /* TB 22-mar-18; was 0px 10px 0px 0px; */ 
+  } 
+  .esc-sidebar-profile-item img { 
+  width:140px!important; 
+  max-width:180px; 
+  } 
+  .update-nag, .updated.notice-success, #update-nag{ 
+  display:none!important; 
+  } 
+  .cleanlogin-form .cleanlogin-field-username, .cleanlogin-form .cleanlogin-field-password{ 
+  width:300px!important; 
+  margin-bottom:5px; 
+  } 
+ .esc-sidebar-profile-item{ 
+  display:inline-block; 
+  position: absolute; 
+  } 
+  div.left, div.right{ 
+  position: absolute; 
+  z-index: 9999; 
+  } 
+  form#fmfill{ width:100%; max-width: 500px!important; height:300px; padding:0px; }
+  input.paypal-btn { /* 116.6 edited */ 
+    display:block;
+    background-image: url(/image-files/paynow.jpg); 
+    width: 60%; 
+    height: 60%; 
+    background-size: contain;
+    background-repeat: no-repeat;
+    border: none; 
+  } 
+  /* --------------------------------------------- Works with HAMBURGER NAV (below) --------------------------------------------- */ 
+  .menu-primary { 
+  clear: both; 
+  } 
+  .sub-menu-toggle, .menu-toggle { 
+  display: none; 
+  visibility: hidden; 
+  } 
+  /* --------------------------------------------- Works with HAMBURGER NAV (above) --------------------------------------------- */ 
+  /* ------------------------------ --- Responsive code > BELOW -- ------------------------------ */ 
+ /* Media Queries ------------------------------------------------------------------------------------------ TherapyNearYou (Engage theme) ---------- */ 
+  /* Desktops, laptops and iPads (landscape) ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+ @media screen and (max-width: 1155px) { 
+  .width-150 { 
+  width: 175px; 
+  } 
+  } 
+  /* iPads (portrait) ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  @media only screen and (max-width: 990px) { 
+  .visible-websites { 
+  display: none; 
+  text-align: left; 
+  } 
+  .visible-smartphones { 
+  display: block; 
+  text-align: left; 
+  } 
+  .visible-smartphones p { 
+  line-height: 1.00em; 
+  } 
+  .engage .site-header-banner { 
+  height: 220px; 
+  } 
+  .header-image .site-header .title-area { 
+  background-position: center 0px !important; 
+  margin: 0 auto; 
+  } 
+  .header-image .site-header .wrap { 
+  padding: 26px 0 0 0; 
+  width: 100%; 
+  } 
+  .site-header { 
+  width: 100%; 
+  padding-left: 5%; 
+  padding-right: 5%; 
+  margin-left: 0; 
+  margin-right: 0; 
+  } 
+  .content { 
+  width: 100%; 
+  } 
+  .sidebar-content-sidebar .content-sidebar-wrap { 
+  width: 100%; 
+  } 
+  .sidebar-primary { 
+  width: 25%; 
+  } 
+  .sidebar-secondary { 
+  width: 100%; 
+  } 
+  .sidebar-content-sidebar .content { 
+  width: 75%; 
+  } 
+  .breadcrumb { 
+  width: 100%; 
+  } 
+  .title-area { 
+  } 
+  #featured-post-2 { 
+  width: 49%; 
+  float: left; 
+  } 
+  #categories-3 { 
+  width: 49%; 
+  float: right; 
+  } 
+  #text-2 { 
+  width: 49%; 
+  float: left; 
+  } 
+  #statigram-id-2 { 
+  width: 49%; 
+  float: right; 
+  } 
+  .site-header { 
+  position: relative; 
+  } 
+  .site-inner { 
+  margin-top: 0; 
+  margin-right: 0; 
+  margin-bottom: 0; 
+  margin-left: 0; 
+  padding-left: 0; 
+  padding-right: 0; 
+  border-left: 0px; 
+  border-right: 0px; 
+  border-bottom: 0px; 
+  } 
+  .site-inner, .wrap { 
+  width: 100%; 
+  } 
+  .comment-respond, .entry, .entry-comments, .entry-footer .entry-meta, .sidebar .widget, .site-header { 
+  padding: 0; 
+  } 
+  .genesis-nav-menu li, .site-header ul.genesis-nav-menu, .site-header .search-form { 
+  float: none; 
+  } 
+  .genesis-nav-menu, .site-header .title-area, .site-header .search-form, .site-header .widget-area, .site-title { 
+  text-align: center; 
+  } 
+  .genesis-nav-menu a, .genesis-nav-menu>.first>a, .genesis-nav-menu>.last>a { 
+  padding: 15px 15px; 
+  } 
+  .site-header .search-form { 
+  margin: 16px auto; 
+  margin: 1.6rem auto; 
+  } 
+  .genesis-nav-menu li.right { 
+  display: none; 
+  } 
+  .content { 
+  border: none; 
+  padding-left: 0; 
+  padding-right: 0; 
+  } 
+  .entry-footer .entry-meta { 
+  margin: 0; 
+  padding-top: 12px; 
+  padding-top: 1.2rem; 
+  } 
+  .author-box { 
+  padding: 20px; 
+  padding: 2rem; 
+  } 
+  .sidebar-content-sidebar .author-box { 
+  margin-left: 0; 
+  margin-right: 0; 
+  } 
+  .footer-widgets { 
+  padding: 40px 5% 16px; 
+  } 
+  .footer-widgets-1 { 
+  margin: 0; 
+  } 
+  section#text-2 { 
+  width: 100%; 
+  } 
+  .site-footer { 
+  margin-top: 0px; 
+  background-color: #e7e5db; 
+  } 
+  } 
+  @media only screen and (max-width: 970px) { 
+  .content-sidebar-sidebar .content, .sidebar-primary, .sidebar-sidebar-content .content, .sidebar-sidebar-content .content-sidebar-wrap { 
+  width: 20%; 
+  } 
+  .sidebar-secondary { 
+  width: 100%; 
+  } 
+  .sidebar-content-sidebar .content { 
+  width: 80%; 
+  } 
+  } 
+ @media only screen and (max-width: 950px) { 
+  .esc-container { 
+  width: 100%; 
+  } 
+  .esc-page-container { 
+  width: 80%; 
+  } 
+  .esc-sidebar-container { 
+  width: 20%; 
+  } 
+  } 
+ /* iPhones (portrait and landscape) ----------------------------------- TherapyNearYou (Engage theme) ---------- */ 
+  @media only screen and (max-width: 900px) { 
+  #featured-post-2, #categories-3, #text-2, #statigram-id-2 { 
+  width: 100%; 
+  float: left; 
+  } 
+  .site-inner { 
+  margin-top: 0; 
+  padding-left: 0%; 
+  padding-right: 0%; 
+  padding-top: 0; 
+  } 
+  main.content { 
+  padding: 20px; 
+  margin-bottom: 0px; 
+  border: 0px solid #cccccc; 
+  -webkit-border-radius: 0px; 
+  border-radius: 0px; 
+  margin-top: 0px; 
+  } 
+  .sidebar .widget { 
+  margin-bottom: 0px; 
+  } 
+  .sidebar { 
+  margin-top: 0px; 
+  } 
+  .site-footer { 
+  } 
+  .widget-wrap { 
+  } 
+  } 
+  @media only screen and (max-width: 890px) { 
+  .content-sidebar-sidebar .content, .sidebar-primary, .sidebar-sidebar-content .content, .sidebar-sidebar-content .content-sidebar-wrap { 
+  width: 22%; 
+  } 
+  .sidebar-secondary { 
+  width: 100%; 
+  } 
+  .sidebar-content-sidebar .content { 
+  width: 78%; 
+  } 
+  } 
+  @media only screen and (max-width: 860px) { 
+  .site-header .widget-area { 
+  width: 100% !important; 
+  vertical-align: top; 
+  } 
+  .visible-smartphones { 
+  margin: 0px; 
+  text-align: left; 
+  padding: 0 0 0 10px; 
+  } 
+  .visible-smartphones p { 
+  text-align: left; 
+  } 
+  .wny-cropper-main { 
+  width: 100%; 
+  } 
+  .wny-cropper-preview-container { 
+  width: 100%; 
+  height: 165px; 
+  float: none; 
+  margin: 0 0 20px 0; 
+  } 
+  } 
+ @media only screen and (max-width: 830px) { 
+  .esc-sidebar-container { 
+  width: 100%; 
+  background: #e7e5db; 
+  } 
+  h2.esc-sidebar { 
+  font-size: 18px; 
+  width: 100%; 
+  display: block; 
+  } 
+  h3.esc-sidebar-bold { 
+  width: 100%; /* Toby 22-mar-18; was 95% */ 
+  overflow: hidden; 
+  white-space: nowrap; 
+  } 
+  p.esc-sidebar { 
+  width: 95%; /* Toby 22-mar-18; was 95% */ 
+  overflow: hidden; 
+  white-space: nowrap; 
+  } 
+  h3.esc-sidebar-normal { 
+  width: 100%; /* Toby 22-mar-18; was 95% */ 
+  overflow: hidden; 
+  white-space: normal; 
+  } 
+  .esc-page-container { 
+  width: 100%; 
+  border-top: 0px solid #dddddd; 
+  border-right: 0px solid #dddddd; 
+  border-bottom: 0px solid #dddddd; 
+  border-left: 0px solid #dddddd; 
+  } 
+  .esc-sidebar-profile { 
+  width: 20%; 
+  margin: 0 0 10px 0; 
+  } 
+  .esc-sidebar-profile-under { 
+  width: 20%; 
+  margin: 0 0 10px 0; 
+  } 
+  .esc-sidebar-profile img { 
+  width: 100%; 
+  } 
+  .esc-sidebar-profile-under img { 
+  } 
+  .esc-mini-endorse p { 
+  } 
+  } 
+ .widget_practitioner_list_widget .left, .widget_practitioner_list_widget .right{ display:none; }
+ @media only screen and (max-width: 830px) { .sidebar.sidebar-primary.widget-area{ width: 100%; height: 270px; background: #e7e5db; overflow:hidden; }
+  .widget_practitioner_list_widget .left, .widget_practitioner_list_widget .right{ display:block; } 
+  .esc-sidebar-content2{ height: 300px; overflow: hidden; width: 96%; display: block; position: absolute; } 
+  div.esc-sidebar-profile{ display:block!important; margin-right: 10px; margin-bottom:100px; width:100px!important; max-width: 100px!important; height:220px!important; position: absolute!important; } 
+  div.esc-sidebar-profile h3 a{ display:block!important; } .esc-sidebar-profile img{ width:100px!important; height: 100px!important; } } 
+ @media only screen and (max-width: 830px) { 
+  .sidebar-secondary .widget-wrap, .sidebar .widget-wrap { 
+  background-color: #e7e5db; 
+  /* make sidebar grey when at bottom */ 
+  } 
+  .sidebar-primary { 
+  width: 100%; 
+  } 
+  .sidebar-content-sidebar .content { 
+  width: 100%; 
+  } 
+  .breadcrumb { 
+  width: 100%; 
+  } 
+  } 
+ @media only screen and (max-width: 800px) { 
+    .sidebar.sidebar-primary.widget-area .esc-sidebar-profile { 
+        margin-bottom: 400px; 
+    } 
+    .sidebar.sidebar-primary.widget-area { 
+        background:#e7e5db!important; 
+        height:230px; 
+        overflow:hidden!important; 
+    }
+    .esc-sidebar-profile-under { 
+     width: 33%; 
+    } 
+  } 
+ /* ThNrU-v72 make all links underline for ipads and narrower */
+ @media only screen and (max-width: 770px) { a, span.blue-bold, span.blue-bold-tick { text-decoration: underline; } .thnru-button-orange-mini { /* v116.4 added */ padding: 5px 10px 5px 10px; } } 
+ @media only screen and (max-width: 767px) { 
+    .engage .site-header-banner { 
+        height: 200px; 
+    } 
+    .title-area { 
+        margin-left: 0px; 
+    } 
+    .header-image .site-header .wrap { 
+        width: 100%; 
+    } 
+    .five-sixths, .four-sixths, .one-fourth, .one-half, .one-sixth, .one-third, .three-fourths, .three-sixths, .two-fourths, .two-sixths, .two-thirds { 
+        margin: 0; 
+        width: 100%; 
+    } 
+    .genesis-grid-even, .genesis-grid-odd { 
+        width: 100%; 
+    } 
+  } 
+ /* ThNrU-v87 added below. "Apple iPhone 6 Plus", landscape width = 736px */ 
+  @media only screen and (max-width: 740px) { 
+  .engage .site-header-banner { 
+  display: none; 
+  } 
+  } 
+  @media screen and (max-width: 710px) { 
+  .width-150 { 
+  width: 150px; 
+  } 
+  } 
+ /* ------------------------------ --- Hamburger menu > BELOW --- ------------------------------ */ 
+  /* Responsive Navigation ---------------------------------------------------------------------------------------------------- */ 
+ /* Navigation toggles - Ensure Menu Displays when Scaled Up --------------------------------------------- */ 
+ @media only screen and (min-width: 701px) { 
+  .menu-primary { 
+  display: block !important; 
+  } 
+  } 
+  /* Navigation toggles - Mobile (Change max width as you see fit) --------------------------------------------- */ 
+  @media only screen and (max-width: 700px) { 
+        .menu-toggle, .sub-menu-toggle { 
+            display: block; 
+            font-size: 30px; 
+            font-weight: 700; 
+            margin-left: auto; 
+            margin-right: auto; 
+            overflow: hidden; 
+            padding: 0px; 
+            text-align: left; 
+            visibility: visible; 
+            width: 100%; 
+            height: 50px; 
+            text-align: center; 
+            background: #999999; 
+        } 
+        button.menu-toggle, button.sub-menu-toggle { 
+            background-color: transparent; 
+            color: #888888; 
+            border-radius: 0px; 
+            border-width: 0px; 
+            margin-bottom: 0px; 
+        } 
+        .sub-menu-toggle { 
+            padding: 18px; 
+            position: absolute; 
+            right: 0; 
+            top: 0; 
+        } 
+        .menu-toggle:before { 
+           content: "\2261"; 
+           color: #555555; 
+        /* Hamburger icon */ 
+        } 
+        .menu-toggle:hover { 
+            text-decoration: none !important; 
+        } 
+        .menu-toggle.activated:before { 
+            content: "\2191"; 
+            color: #555555; 
+            /* Hamburger icon */ 
+        } 
+        .sub-menu-toggle:before { 
+            content: "+"; 
+        } 
+        .sub-menu-toggle.activated:before { 
+            content: "-"; 
+            color: #ffffff; 
+        } 
+        .menu-primary { 
+            display: none; 
+            position: relative; 
+        } 
+        .genesis-nav-menu .menu-item { 
+            background-color: #eff3f3; 
+            display: block; 
+            position: relative; 
+            text-align: left; 
+        } 
+        .genesis-nav-menu .menu-item:hover { 
+            position: relative; 
+        } 
+        .genesis-nav-menu .sub-menu { 
+            clear: both; 
+            display: none; 
+            opacity: 1; 
+            position: static; 
+            width: 100%; 
+        } 
+        .genesis-nav-menu .sub-menu a { 
+            border-left: 0; 
+            position: relative; 
+            width: auto; 
+        } 
+        .genesis-nav-menu .sub-menu .sub-menu { 
+            margin: 0; 
+        } 
+        .genesis-nav-menu .sub-menu .sub-menu a { 
+            background-color: #000000; 
+            padding-left: 30px; 
+        } 
+        .genesis-nav-menu .sub-menu .sub-menu .sub-menu a { 
+            background-color: #000000; 
+            padding-left: 40px; 
+        } 
+        .menu-primary a:hover, .menu-primary .current-menu-item>a { 
+            color: #888888; 
+        } 
+        .genesis-nav-menu a { 
+            text-decoration: none !important; 
+            color: #555555; 
+        } 
+        .genesis-nav-menu a:hover, .genesis-nav-menu .current-menu-item>a, .genesis-nav-menu .sub-menu .current-menu-item>a:hover { 
+            color: #000000; 
+            border-bottom: 0px solid #0084b3; 
+            transition: all .3s ease-in-out; 
+            background: transparent url('/image-files/sprites/point-triangle-15x8.gif') 50% 100% no-repeat; 
+            text-decoration: none; 
+        } 
+        .wrap { 
+            width: 100%; 
+            margin 0; 
+        } 
+  } 
+  /* ------------------------------ --- Hamburger menu > ABOVE --- ------------------------------ */ 
+  /* ------------------------------ ------------------------------ ------------------------------ */ 
+  /* ------------------------------ ------------------------------ ------------------------------ */ 
+ @media only screen and (max-width: 700px) { 
+    .esc-image-gallery { 
+      height: 180px; 
+    } 
+  } 
+
+ @media screen and (max-width: 660px) { 
+    .site-header { 
+        background-size: cover; 
+    } 
+    .header-image .site-header .wrap { 
+        padding: 16px 0 0 0; 
+        width: 100%; 
+    } 
+    .site-header .widget-area { 
+        background: transparent; 
+        width: 100%; 
+        height: 50px; 
+    } 
+    .visible-smartphones { 
+        margin: 0px auto 0px auto; 
+        width: 100%; 
+        position: relative; 
+        text-align: center; 
+        overflow: hidden; 
+    } 
+    .visible-smartphones p { 
+        text-align: center; 
+    } 
+    .dynamic-col-20pc-left, .dynamic-col-30pc-left { 
+        float: left; 
+        width: 100%; 
+        height: auto; 
+        margin-right: 0%; 
+    } 
+    .dynamic-col-20pc-right, .dynamic-col-30pc-right { 
+        float: left; 
+        width: 100%; 
+        height: auto; 
+        margin-left: 0%; 
+    } 
+    #dormant-field-container { 
+        float: left; 
+        width: 100%; 
+        margin: 12px 0 12px 0 !important; 
+    } 
+    #dormant-width-100pc { 
+        width: 100%; 
+    } 
+    .dormant-select-container { 
+        float: left; 
+        width: 100%; 
+        margin: 0 0 12px 0 !important; 
+    } 
+  } 
+
+ @media only screen and (max-width: 650px) { 
+    .esc-image-gallery { 
+        height: 170px; 
+    } 
+  } 
+
+  @media only screen and (max-width: 650px) { 
+    .esc-container-left, .esc-container-right { 
+        width: 100%; 
+        margin: 0; 
+        float: none; 
+    } 
+    h2.esc-smartphone-top-border { 
+        border-top: 1px solid #ccc; 
+    } 
+    .esc-padding-top-11 { 
+        display: block; 
+        padding: 0px 0 0 0; 
+    } 
+  } 
+
+  @media screen and (max-width: 650px) { 
+    .vanishing-line-w650-esc { 
+        display: block; 
+        width: 100%; 
+        height: 1px; 
+        background: #cccccc; 
+        border: none; 
+        outline: none; 
+        padding: 0px !important; 
+        margin: 11px 0 13px 0 !important; 
+    } 
+  } 
+
+ @media only screen and (max-width: 610px) { 
+    .dynamic-col-25pc-right { 
+        width: 68%; 
+        margin-right: 2%; 
+    } 
+    .dynamic-col-25pc-left { 
+        width: 30%; 
+    } 
+    p.cv-col-left { 
+        width: 100%; 
+        font-weight: 700; 
+        margin-bottom: 2px; 
+    } 
+    p.cv-col-right { 
+        width: 100%; 
+        font-weight: 400; 
+    } 
+  } 
+ @media only screen and (max-width: 580px) { 
+    .esc-image-gallery { 
+     height: 160px; 
+    } 
+  } 
+
+ @media only screen and (max-width: 570px) { 
+    .search-results-title { 
+      width: 100%; 
+    } 
+    .width-90pc { 
+      width: 100%; 
+    } 
+    .dynamic-col-25pc-right { 
+      width: 100%; 
+       margin-right: 0%; 
+    } 
+    .dynamic-col-25pc-left { 
+     width: 100%; 
+    } 
+    .dynamic-top-margin-w550 { 
+     margin-top: 10px; 
+    } 
+  } 
+
+  @media screen and (max-width: 560px) { 
+     form.cleanlogin-form { width: 100%; }
+    .width-150 { width: 135px; }  
+    .site-header .widget-area { padding: 0; } 
+ }
+
+ @media only screen and (max-width: 550px) { 
+    .esc-image-gallery { 
+     height: 150px; 
+    } 
+  } 
+  @media only screen and (max-width: 550px) { 
+    .esc-container-contact { 
+        width: 100%; 
+        margin: 0; 
+        float: none; 
+    } 
+    #author_pic_contact_esc { 
+        width: 50px; 
+        height: 50px; 
+        margin: 2px 5px 5px 0; 
+        float: left; 
+    } 
+  } 
+ @media only screen and (max-width: 520px) { 
+   .esc-image-gallery { 
+     height: 140px; 
+    } 
+  } 
+
+  @media screen and (max-width: 510px) {
+    .visible-smartphones { height: 50px; }
+    .width-150 { background: none; width: 60%; }
+    .thnru-review-box-sm { height: 99px; }
+    .margin-left-bottom { margin-top: 0px; margin-right: 0px; margin-bottom: 15px; margin-left: 0% !important; }
+    
+    #author_pic { width: 143px; height: 143px; margin: 0 0 10px 0; }
+    #author_pic img { border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
+    .vanishing-line hr { display: block; width: 100%; height: 1px; background: #cccccc; border: none; outline: none; padding: 0px !important; margin: 11px 0 13px 0 !important; }
+    .site-header .widget-area { padding: 0px; vertical-align: middle; margin-left: auto; margin-right: auto; width: 100%; float: none; }
+    .title-area { float: none; margin: 0 auto 0 auto; }
+ } 
+
+ @media only screen and (max-width: 510px) { /* was 497px */ 
+  .endorse-pill, .endorse-pill-dropdown { 
+   background: #f7f7f7 url('/image-files/sprites/edge-yellow-w90.gif') right top repeat-y; 
+   background-size: 77px auto; 
+   min-height: 31px !important; 
+  } 
+  .skills-narrow, .skills-narrow-dropdown, .skills-wide, .skills-wide-dropdown, p.endorse-number, p.endorse-skill { 
+   font-size: 16px; 
+   line-height: 1.25em; 
+  }
+
+  p.endorse-skill { 
+   width: -moz-calc(100% - 77px); 
+   width: -webkit-calc(100% - 77px); 
+   width: -o-calc(100% - 77px); 
+   width: calc(100% - 77px); 
+  }
+
+  p.endorse-number-cp, p.endorse-number { 
+   width: 77px; 
+  } 
+
+  p.endorse-number-cp { 
+   padding: 1px 0 0 0; 
+  }
+
+  span.blue-bold-tick:after, p.endorse-number:after { 
+   content: url("/image-files/sprites/tick-blue-tags.png"); 
+   padding: 0 0 0 3px; 
+  } 
+
+  .endorse-sublist p a { 
+   display: block; 
+   padding-right: 0px; 
+  } 
+
+ .skills-narrow ul li:after, .skills-narrow-dropdown ul li:after { 
+   content: url("/image-files/sprites/tick-blue-tags.png"); 
+   padding: 0 0 0 3px; 
+  } 
+  .skills-sublist, .skills-sublist-basicusers { 
+   background: #ffffee; 
+  } 
+} 
+
+@media only screen and (max-width: 490px) { 
+  .esc-image-gallery { 
+    height: 130px; 
+   } 
+  input.paypal-btn { /* 116.6 edited */ 
+    width: 100%; 
+    height: 100%; 
+  } 
+} 
+
+@media only screen and (max-width: 455px) { 
+  .esc-image-gallery { 
+    height: 120px; 
+    } 
+} 
+@media screen and (max-width: 440px) {  
+   .width-150 { width: 50%; } 
+} 
+@media only screen and (max-width: 425px) { 
+  .esc-image-gallery { 
+    height: 110px; 
+  } 
+} 
+
+@media screen and (max-width: 380px) { 
+  .sidebar-secondary .widget-wrap, .sidebar .widget-wrap { 
+  padding: 15px; 
+  } 
+  main.content { 
+  padding: 15px; 
+  } 
+  .inside-user-feedback-v34 { 
+  border: 5px solid #cccccc; 
+  padding: 10px; 
+  } 
+  .testimonial-text:after { 
+  display: none; 
+  } 
+  .testimonial-text p { 
+  padding: 0 0 0 30px; 
+  } 
+  h5 { 
+   font-size: 13px; 
+  } 
+} 
+
+@media screen and (max-width: 350px) { 
+  .thnru-button-orange { 
+    font-size: 13px; 
+    line-height: 13px; 
+    padding: 5px 3px 5px 3px; 
+  } 
+  #author_pic { 
+    width: 112px; 
+    height: 112px; 
+    margin: 0 0 10px 0; 
+  } 
+  h5 { 
+    font-size: 75%; 
+  } 
+} 
+
+@media only screen and (max-width: 330px) { 
+    .sidebar-secondary .widget-wrap, .sidebar .widget-wrap { 
+        padding: 10px; 
+    } 
+    main.content, .esc-sidebar-under { 
+      padding: 10px; 
+    } 
+    .endorse-sublist-basicusers p a { 
+      display: block; 
+      padding-right: 0px; 
+    } 
+    p.thnru-small-text { 
+      font-size: 75%; 
+    } 
+} 
+
+@media only screen and (max-width: 320px) { 
+    .header-image .site-header .title-area { 
+      background-size: contain !important; 
+    } 
+} 
+
+.upgrade-section{
+  display:table; 
+  margin-bottom:20px; 
+}
+
+/* v117.3 below */
+.upgrade-section b {
+display: inline-block;
+color: #00aa00; /* #00aa00 = dark green */
+font-weight: 400;
+/*
+border: 0px solid green;
+padding: 0px 0px;
+border-radius: 8px;
+margin: 0px 0px;
+*/
+}
+
+.upgrade-button{
+  float:none!important;
+  display:inline-block!important; 
+  width:auto;
+ } 
+
+#challenge-popup{
+  border-radius: 25px!important;
+ } 
+
+#challenge-popup iframe{
+  width:700px; height:700px; 
+ }
+
+@media only screen and (max-width: 550px) {
+  #challenge-popup iframe{
+   width:600px; height:800px; 
+  }
+ }
+
+ @media only screen and (max-width: 400px) {
+  #challenge-popup iframe{
+    width:600px; height:850px; 
+  }
+ }
+ @media only screen and (max-width: 350px) {
+  #challenge-popup iframe{
+  width:600px; height:900px; 
+  }
+ } 
+ #challenge-body{ padding:10px; background:#fff; overflow:scroll!important; position:relative; }
+ #challenge-body h1{ font-size:24px!important; }
+ #challenge-body body{ background: #fff; }
+ #challenge-body body *{ font-size:16px;}
+ .challenge-button-submit{ float:right; font-weight:bold; } 
+ .not-serviced{ color: red; font-size: 14px; margin-top: 2px; position: relative; float:left; display:none; } 
+ .challenge-number{ width: 50px; text-align:center;padding:5px; } .terms-condition-error{ color:red; font-size:14px; display:none;}
+
+ form#fmfill {
+ max-width: 100px;
+ }
+ 
+ .genesis-before-header .hi-header{
+    color: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.00em;
+    width: 900px;
+    margin: auto;
+    text-align: left;
+    word-spacing: 0.03em;
+ }
+
+.long-intro-large, .long-intro-normal {
+    color: #555555;
+    font-family: 'open sans', lato, 'helvetica neue', helvetica, arial;
+}
+
+.long-intro-large {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.long-intro-normal {
+  font-size: 14px;
+ font-weight: 300;
+}
