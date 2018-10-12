@@ -101,6 +101,8 @@ define("PRAC_VISIBILITY_OPTION", "visibility");
 //boolean
 define("PRAC_LOCK_OPTION",		"lock");
 
+define("PRAC_PROFILE_TYPE",		"profile_type");
+
 
 define("PRAC_POST_TYPE",			"practitioner");
 

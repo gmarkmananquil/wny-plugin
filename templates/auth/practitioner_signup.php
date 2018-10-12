@@ -245,7 +245,7 @@
             <p>Please write between 180 and 1250 characters. Also, please do not include your contact details in this section.
                 Contact information can only be entered into the Contact Details section.</p>
         
-            <textarea name="long-intro" id="long-intro" cols="30" rows="10"></textarea>
+            <textarea name="long_intro" id="long-intro" cols="30" rows="10"></textarea>
             
             <p>Note: Please don't include the names of any medical conditions in any part of your profile,
                 even if you have been able to treat them successfully (unless you have the appropriate qualifications to
@@ -358,10 +358,10 @@
             <div class="form">
                 <div class="form-group">
                     <label>
-                        <input type="radio" name="profile-type" class=""> Regular
+                        <input type="radio" name="profile_type" class=""> Regular
                     </label>
                     <label>
-                        <input type="radio" name="profile-type" class=""> Expanded (Receive written reviews)
+                        <input type="radio" name="profile_type" class=""> Expanded (Receive written reviews)
                     </label>
                 </div>
             </div>

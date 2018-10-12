@@ -26,19 +26,17 @@ class wnyPractitionerRegister{
 				if($this->validate()){
 				
 					foreach($_POST as $key => $value){
-						$$key = sanitize_text_field(trim($value));
+						if(!is_array($value))
+							$$key = sanitize_text_field(trim($value));
+						else
+							$$key = $value;
 					}
 					
 					$categories = array();
-					array_merge($categories, $ages);
-					array_merge($categories, $sizes);
-					array_merge($categories, $languages);
-					array_merge($categories, $services);
-					
-					echo "========= CATEGORIES ==========";
-					echo var_dump($categories);
-					
-					return false;
+					$categories = is_array($ages)		?	array_merge($categories, $ages)				:array_merge($categories, []);
+					$categories = is_array($sizes)		?	array_merge($categories, $sizes)			:array_merge($categories, []);
+					$categories = is_array($languages)	?	array_merge($categories, $languages)		:array_merge($categories, []);
+					$categories = is_array($services)	?	array_merge($categories, $services)			:array_merge($categories, []);
 					
 					//create user first
 					$user_id = username_exists($alias);
@@ -70,7 +68,7 @@ class wnyPractitionerRegister{
 						$post_id = wp_insert_post(
 							array(
 								'post_author' => $user_id,
-								'post_content' => $long_text,
+								'post_content' => $long_intro,
 								"post_title" => $fullname,
 								"post_type" => PRAC_POST_TYPE,
 								"post_category" => $categories
@@ -82,7 +80,11 @@ class wnyPractitionerRegister{
 							//TODO: what if it is error? delete user? or retry again?
 							//try again?
 							
+							//delete user
 							
+							//delete user meta, associated with user
+							
+							return;
 						}
 						
 						if($post_id > 0){
@@ -96,6 +98,10 @@ class wnyPractitionerRegister{
 							update_post_meta($post_id, PRAC_COUNTRY, $country);
 							update_post_meta($post_id, PRAC_EMAIL, $office_email);
 							update_post_meta($post_id, PRAC_WEBSITE, $website);
+							
+							//user might not choose to select title
+							$title = isset($title)?$title:"";
+							
 							update_post_meta($post_id, PRAC_TITLE, $title);
 							update_post_meta($post_id, PRAC_LATITUDE, $latitude);
 							update_post_meta($post_id, PRAC_LONGITUDE, $longitude);
@@ -103,8 +109,9 @@ class wnyPractitionerRegister{
 							update_post_meta($post_id, PRAC_MEMBERSHIPS, $memberships);
 							update_post_meta($post_id, PRAC_QUALIFICATION, $qualification);
 							
-							update_post_meta($post_id, PRAC_VISIBILITY_OPTION, $visibility);
-							update_post_meta($post_id, PRAC_LOCK_OPTION, $lock);
+							update_post_meta($post_id, PRAC_VISIBILITY_OPTION, true);
+							update_post_meta($post_id, PRAC_LOCK_OPTION, false);
+							update_post_meta($post_id, PRAC_PROFILE_TYPE, $profile_type);
 							
 						}
 						
