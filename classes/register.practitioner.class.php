@@ -5,7 +5,9 @@
  */
 
 class wnyPractitionerRegister{
-
+	
+	private $raw_data;
+	
 	public function __construct(){
 		add_action("init",		array($this, 		"init"));
 		
@@ -14,8 +16,52 @@ class wnyPractitionerRegister{
 	
 	public function init(){
 		
-		//check if submitted
+		echo var_dump($_POST);
 		
+		//check if submitted
+		if(isset($_POST[WNY_SUBMIT_NAME])){
+		
+			$action = trim($_POST["action"]);
+			
+			if($action == PRAC_SIGNUP_ACTION){
+			
+				if($this->validate()){
+				
+					foreach($_POST as $key => $value){
+						$$key = sanitize_text_field(trim($value));
+					}
+					
+					//create user first
+					
+					
+					
+					//save user meta
+					
+					//create practitioner post
+					
+					//save practitioner post meta
+					
+				
+				}
+			
+			}
+			
+		}
+		
+	}
+	
+	private function validate(){
+	
+		//validate name
+		
+		//validate email
+		
+		//validate address
+		
+		//
+		
+		//return true if validation successful, false if there was error
+		return true;
 	}
 	
 	public function generateShortcode(){

@@ -67,7 +67,7 @@ if(!function_exists("practitioner_init")){
 			'rewrite'           => array( 'slug' => 'Language' ),
 		);
 		
-		register_taxonomy( PRAC_LANGUAGE, array( PRAC_POST_TYPE ), $args );
+		register_taxonomy( PRAC_TAX_LANGUAGE, array( PRAC_POST_TYPE ), $args );
 		
 		
 		$labels = array(
@@ -90,10 +90,10 @@ if(!function_exists("practitioner_init")){
 			'show_ui'           => true,
 			'show_admin_column' => true,
 			'query_var'         => true,
-			'rewrite'           => array( 'slug' => 'Client Group Size' ),
+			'rewrite'           => array( 'slug' => 'client-group-size' ),
 		);
 		
-		register_taxonomy( 'cgs', array( PRAC_POST_TYPE ), $args );
+		register_taxonomy( PRAC_TAX_CLIENT_GROUP_SIZE, array( PRAC_POST_TYPE ), $args );
 		
 		$labels = array(
 			'name'              => _x( 'Client Age Groups', 'taxonomy general name', 'textdomain' ),
@@ -115,10 +115,10 @@ if(!function_exists("practitioner_init")){
 			'show_ui'           => true,
 			'show_admin_column' => true,
 			'query_var'         => true,
-			'rewrite'           => array( 'slug' => 'Client Age Group' ),
+			'rewrite'           => array( 'slug' => 'client-age-group' ),
 		);
 		
-		register_taxonomy( 'cag', array( PRAC_POST_TYPE ), $args );
+		register_taxonomy( PRAC_TAX_CLIENT_AGE_GROUP, array( PRAC_POST_TYPE ), $args );
 		
 		$labels = array(
 			'name'              => _x( 'Services', 'taxonomy general name', 'textdomain' ),
@@ -143,7 +143,7 @@ if(!function_exists("practitioner_init")){
 			'rewrite'           => array( 'slug' => 'service' ),
 		);
 		
-		register_taxonomy( PRAC_SERVICE, array( PRAC_POST_TYPE ), $args );
+		register_taxonomy( PRAC_TAX_SERVICE, array( PRAC_POST_TYPE ), $args );
 		
 		
 		$labels = array(
@@ -169,7 +169,7 @@ if(!function_exists("practitioner_init")){
 			'rewrite'           => array( 'slug' => 'condition' ),
 		);
 		
-		register_taxonomy( PRAC_CONDITION, array( PRAC_POST_TYPE ), $args );
+		register_taxonomy( PRAC_TAX_CONDITION, array( PRAC_POST_TYPE ), $args );
 		
 	}
 }

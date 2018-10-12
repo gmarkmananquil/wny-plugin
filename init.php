@@ -24,7 +24,7 @@ define("WNY_ADMIN_PAGES_PATH", 	WNY_ADMIN_PATH . DS . "pages");
 
 define("WNY_TEMPLATE_PATH",	WNY_PATH . DS . "templates");
 
-
+define("WNY_BASEURL",	plugin_dir_url(__FILE__));
 
 
 /** ========= USER META DATA ======== */
@@ -106,24 +106,24 @@ define("PRAC_VISIBILITY_OPTION", "visibility");
 define("PRAC_LOCK_OPTION",		"lock");
 
 
-define("PRAC_POST_TYPE",		"practitioner");
+define("PRAC_POST_TYPE",			"practitioner");
 
-define("PRAC_CONDITION",		"condition");
+define("PRAC_TAX_CONDITION",		"condition");
 
-define("PRAC_SERVICE",			"service");
+define("PRAC_TAX_SERVICE",			"service");
 
-define("PRAC_LANGUAGE",			"language");
+define("PRAC_TAX_LANGUAGE",			"language");
 
+define("PRAC_TAX_CLIENT_AGE_GROUP",			"cag");
 
-
-
+define("PRAC_TAX_CLIENT_GROUP_SIZE",		"cgs");
 
 //==== SHORTCODES
-define("PRAC_SIGNUP_SHORTCODE",	"wny_practitioner_signup");
+define("PRAC_SIGNUP_SHORTCODE",		"wny_practitioner_signup");
 
-define("BASIC_SIGNUP_SHORTCODE","wny_basic_signup");
+define("BASIC_SIGNUP_SHORTCODE",	"wny_basic_signup");
 
-define("LOGIN_SHORTCODE",		"wny_login");
+define("LOGIN_SHORTCODE",			"wny_login");
 
 
 //=====
@@ -136,6 +136,10 @@ define("COUNTRIES",				array(
 ));
 
 define("PRAC_SIGNUP_ACTION",	"practitioner-signup");
+
 define("PRAC_LOGIN_ACTION",		"practitioner-login");
+
 define("BASIC_SIGNUP_ACTION",	"basic-signup");
+
+define("WNY_SUBMIT_NAME",		"wny_submit");
 
