@@ -1,0 +1,7 @@
+{
+    "require": {
+        "facebook/webdriver": "^1.6",
+        "fzaninotto/faker": "^1.8",
+        "components/jqueryui": "^1.12"
+    }
+}

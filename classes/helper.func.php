@@ -24,7 +24,7 @@ class wnyHelper{
 		return $languages;
 	}
 	
-	public static function groupsList($hideEmpty = false){
+	public static function agesList($hideEmpty = false){
 		$groups = get_terms(PRAC_TAX_CLIENT_AGE_GROUP, array( "hide_empty" => $hideEmpty));
 		return $groups;
 	}

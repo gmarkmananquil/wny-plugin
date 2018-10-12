@@ -32,8 +32,6 @@ define("USER_FIRSTNAME",		"first_name");
 
 define("USER_LASTNAME",			"last_name");
 
-define("USER_ADDRESS",			"address");
-
 define("USER_GENDER",			"gender");
 
 //boolean
@@ -50,8 +48,6 @@ define("USER_ADDRESS2",			"address_2");
 define("USER_CITY",				"city");
 
 define("USER_POSTCODE",			"postcode");
-
-define("USER_EMAIL",			"email");
 
 define("USER_COUNTRY",			"country");
 

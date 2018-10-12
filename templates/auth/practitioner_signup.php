@@ -62,7 +62,7 @@
             
             <?php /** TODO: DETERMINE IF THIS IS USERNAME  **/ ?>
             <p>
-                * <input type="text" name="alias" id="alias">
+                * <input type="text" name="alias" id="alias" />
             </p>
             
         </div> <!--#section-practitioner-name-->
@@ -74,8 +74,6 @@
             <h4>Account Details</h4>
     
             <div class="form">
-                <div class="form-group"></div>
-    
                 <div class="form-group">
                     <label for="email">Account Email <span class="required">*</span> : </label>
                     <input type="text" name="email" id="email">
@@ -90,7 +88,6 @@
                     <label for="cpassword">Confirm password : </label>
                     <input type="password" name="cpassword" id="cpassword">
                 </div>
-    
             </div>
         </div><!--#section-account-details-->
     
@@ -106,8 +103,6 @@
             <div class="spacer-small"></div>
     
             <div class="form">
-                <div class="form-group"></div>
-                
                 <div class="form-group">
                     <label for="qualifications">Qualifications : </label>
                     <input type="text" name="qualifications" id="qualifications">
@@ -183,7 +178,7 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Office email : </label>
-                    <input type="text" name="email" id="email" class="form-input" />
+                    <input type="text" name="office_email" id="email" class="form-input" />
                 </div>
                 <div class="form-group">
                     <label for="website">Website : </label>
@@ -229,7 +224,7 @@
             
             <p>Please enter a short introductory sentence to introduce yourself to potential customers, only between 105 and 230 characters long.</p>
         
-            <textarea name="short-intro" id="short-intro" cols="30" rows="10"></textarea>
+            <textarea name="short_intro" id="short_intro" cols="30" rows="10"></textarea>
             <div class="text-small">You have entered 0 characters.</div>
             
         </div>
@@ -263,25 +258,38 @@
         <hr>
         
         <div id="section-clients">
-        
+            
+            <h4>Clients</h4>
+            
             <p>Please check the boxes next to the type of clients you work with.</p>
             
             <div class="form">
                 
-                <?php $groups = wnyHelper::sizesList(); ?>
-                
+                <?php $ages = wnyHelper::agesList(); ?>
                 <div class="form-group">
                     <div class="form-label">Age : </div>
-                    <?php foreach($groups as $key => $group): ?>
-                        <div class="group-<?php echo $key; ?>" data-id="<?php echo $group->term_id; ?>">
+                    <?php foreach($ages as $key => $age): ?>
+                        <div class="group-<?php echo $key; ?>" data-id="<?php echo $age->term_id; ?>">
                             <label>
-                                <input type="checkbox" name="languages" value="<?php echo $group->term_id; ?>" />
-                                <?php echo $group->name; ?>
+                                <input type="checkbox" name="ages[]" value="<?php echo $age->term_id; ?>" />
+                                <?php echo $age->name; ?>
                             </label>
                         </div>
                     <?php endforeach; ?>
                 </div>
-                
+	
+				<?php $sizes = wnyHelper::sizesList(); ?>
+                <div class="form-group">
+                    <div class="form-label">Group size : </div>
+					<?php foreach($sizes as $key => $size): ?>
+                        <div class="group-<?php echo $key; ?>" data-id="<?php echo $size->term_id; ?>">
+                            <label>
+                                <input type="checkbox" name="sizes[]" value="<?php echo $size->term_id; ?>" />
+								<?php echo $size->name; ?>
+                            </label>
+                        </div>
+					<?php endforeach; ?>
+                </div>
             
             </div>
             
@@ -302,14 +310,12 @@
                 <?php foreach($languages as $key => $language): ?>
                     <div class="form-group form-group-<?php echo $key; ?>" data-id="<?php echo $language->term_id; ?>" >
                         <label>
-                            <input type="checkbox" name="languages" value="<?php echo $language->term_id; ?>" />
+                            <input type="checkbox" name="languages[]" value="<?php echo $language->term_id; ?>" />
                             <?php echo $language->name; ?>
                         </label>
                     </div>
                 <?php endforeach; ?>
             </div>
-            
-            
             
         </div>
         
@@ -328,7 +334,7 @@
                 <?php foreach($services as $key => $service): ?>
                     <div class="form-group form-group-<?php echo $key; ?>" data-id="<?php echo $service->term_id; ?>" >
                         <label>
-                            <input type="checkbox" name="languages" value="<?php echo $service->term_id; ?>" />
+                            <input type="checkbox" name="services[]" value="<?php echo $service->term_id; ?>" />
                             <?php echo $service->name; ?>
                         </label>
                     </div>

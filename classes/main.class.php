@@ -34,10 +34,10 @@ class WNY{
 		
 		wp_enqueue_script("jquery");
 		wp_enqueue_script("wny-script",					WNY_BASEURL . "/media/js/wny-script.js" );
-		
 	}
 	
 	public static function getInstance(){
+		
 		if(self::$instance == null)
 			self::$instance = new self;
 		
