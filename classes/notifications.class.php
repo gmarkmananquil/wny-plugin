@@ -28,6 +28,9 @@ class wnyNotification{
 	}
 	
 	public function build($field_id, $field_name, $alert_message){
+		
+		$this->alerts = $this->getSessionNotification();
+		
 		$alert = array(
 			"field_id" => $field_id,
 			"field_name" => $field_name,
@@ -35,10 +38,30 @@ class wnyNotification{
 		);
 		
 		$this->alerts[] = $alert;
-		
 		$this->setSessionNotification($this->alerts);
 	}
-
+	
+	/**
+	 * Generate html display of notifications
+	 * @param string $field_id
+	 */
+	public function display($field_id = "general"){
+		foreach($this->alerts as $alert){
+			/**
+			 * hook the display template here
+			 */
+			do_action("wny_notification_display", $alert);
+		}
+	}
+	
+	public static $instance = null;
+	
+	public static function getInstance(){
+		if(self::$instance == null)
+			self::$instance = new self;
+		return self::$instance;
+	}
+	
 }
 
 class AlertMessage{

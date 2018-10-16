@@ -4,12 +4,12 @@
  *
  */
 
-class wnyPractitionerRegister{
+class wnyPractitionerProfile{
 	
 	public function __construct(){
 		add_action("init",		array($this, 		"init"));
 		
-		add_shortcode("wny_practitioner_signup", array($this, "generateShortcode"));
+		//add_shortcode("wny_practitioner_signup", array($this, "generateShortcode"));
 	}
 	
 	public function init(){
@@ -17,14 +17,14 @@ class wnyPractitionerRegister{
 		echo var_dump($_POST);
 		
 		//check if submitted
-		if(isset($_POST[WNY_SUBMIT_NAME])){
-		
+		if(isset($_POST[WNY_SUBMIT_SIGNUP])){
+			
 			$action = trim($_POST["action"]);
 			
 			if($action == PRAC_SIGNUP_ACTION){
-			
-				if($this->validate()){
 				
+				if($this->validate()){
+					
 					foreach($_POST as $key => $value){
 						if(!is_array($value))
 							$$key = sanitize_text_field(trim($value));
@@ -43,7 +43,7 @@ class wnyPractitionerRegister{
 					
 					//make user username and email is not taken
 					if(!$user_id && !email_exists($email)){
-					
+						
 						//create user
 						$user_id = wp_create_user($alias, $email, $password);
 						
@@ -119,9 +119,9 @@ class wnyPractitionerRegister{
 						//do notification here, that username and/or email already exists
 						
 					}//end of email or username exists
-				
+					
 				}//end of validate
-			
+				
 			}//end of action
 			
 		}//end submit
@@ -129,7 +129,7 @@ class wnyPractitionerRegister{
 	}
 	
 	private function validate(){
-	
+		
 		//validate name
 		
 		//validate email
@@ -150,4 +150,4 @@ class wnyPractitionerRegister{
 	
 }
 
-new wnyPractitionerRegister();
+new wnyPractitionerProfile();

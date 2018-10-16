@@ -27,6 +27,8 @@ define("WNY_TEMPLATE_PATH",	WNY_PATH . DS . "templates");
 define("WNY_BASEURL",	plugin_dir_url(__FILE__));
 
 
+require_once "messages.php";
+
 /** ========= USER META DATA ======== */
 define("USER_FIRSTNAME",		"first_name");
 
@@ -133,11 +135,8 @@ define("COUNTRIES",				array(
 	"ie" => "Ireland"
 ));
 
-define("PRAC_SIGNUP_ACTION",	"practitioner-signup");
+define("WNY_SUBMIT_SIGNUP",		"wny_submit_signup");
 
-define("PRAC_LOGIN_ACTION",		"practitioner-login");
+define("WNY_SUBMIT_LOGIN",		"wny_submit_login");
 
-define("BASIC_SIGNUP_ACTION",	"basic-signup");
-
-define("WNY_SUBMIT_NAME",		"wny_submit");
 
