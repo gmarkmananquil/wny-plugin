@@ -1,6 +1,6 @@
 <form action="" method="post">
 
-    <?php echo wny()->notification()->display(); ?>
+    <?php echo wny()->notification()->display("general"); ?>
 
     <div id="wny-signup" class="form">
         
@@ -19,6 +19,7 @@
         <div class="form-group">
             <label for="">Confirm Password</label>
             <input type="password" name="cpassword" id="cpassword" placeholder="Re-type password" class="input-medium" />
+            <?php echo wny()->notification()->display("cpassword"); ?>
         </div>
 
 

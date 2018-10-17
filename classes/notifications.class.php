@@ -54,12 +54,12 @@ class wnyNotification{
 	 */
 	public function display($field_id = "general"){
 	    if(count($this->alerts) > 0){
-            foreach($this->alerts as $alert){
+	        foreach($this->alerts as $key => $alert){
                 /**
                  * hook the display template here
                  */
                 //do_action("wny_notification_display", $alert);
-                if($field_id == "general"){
+                if($key=="general" && $field_id == "general"){
                     foreach($alert as $a){
                         ?>
                         <p class="wny-notification wny-notification-general
@@ -71,8 +71,9 @@ class wnyNotification{
                     $temp_field = $alert["field_id"];
                     if($field_id == $alert["field_id"]){
                         ?>
-                        <p class="wny-notification wny-notification-<?php echo $temp_field; ?>
-                        text-<?php echo $alert["alert_message"]->type; ?>"><?php echo $alert["alert_message"]->message; ?></p>
+                        <p class="wny-notification wny-notification text-<?php echo $alert["alert_message"]->type; ?>">
+                            <?php echo $alert["alert_message"]->message; ?>
+                        </p>
                         <?php
                     }
 
@@ -82,7 +83,11 @@ class wnyNotification{
             }
         }
 	}
-	
+
+	public function purge(){
+	    $this->deleteSessionNotification();
+    }
+
 	public static $instance = null;
 	
 	public static function getInstance(){

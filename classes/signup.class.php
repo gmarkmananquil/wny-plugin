@@ -23,25 +23,54 @@ class wnySignup{
             $terms = sanitize_text_field(trim($_POST["term-agreement"]));
 
 			if($this->validate($email, $password, $cpassword, $terms)){
-				
-				//create user first
-				$user_id = username_exists($email);
-				
+
+                wny()->notification()->purge();
+
+				//
+                $username = "zzz_" . $email . "_zzz";
+				$user_id = username_exists($username);
+
+				echo var_dump($user_id);
+				echo var_dump(email_exists($email));
+
 				//make user username and email is not taken
 				if(!$user_id && !email_exists($email)){
-				
+
+                    wny()->notification()->purge();
+
 					//create user
-					$user_id = wp_create_user($email, $email, $password);
+					$user_id = wp_create_user($username, $email, $password);
 					
 					if($user_id instanceof WP_Error){
+
+
+					    echo var_dump($user_id);
+					    echo var_dump($user_id->get_error_messages());
+                        echo $user_id->get_error_message();
+
 						wny()->notification()->build(
 							"general", "", new AlertMessage(
 								AlertMessage::ERROR, MSG_SIGNUP_FAILED
 							)
 						);
-					}
+
+
+					}else{
+
+                        //TODO: After successful signup, redirect to login?
+                        wny()->notification()->build(
+                            "general", "", new AlertMessage(
+                                AlertMessage::SUCCESS, MSG_SIGNUP_SUCCESS
+                            )
+                        );
+
+
+                        //TODO: instead of hardcoding the url, find a way to make user save this as setting of the page
+                        wp_safe_redirect("/login");
+                        exit;
+                    }
 					
-					//TODO: After successful signup, redirect to login?
+
 					
 				}else{
 					//do notification here, that username and/or email already exists
@@ -92,7 +121,7 @@ class wnySignup{
 			$flag = false;
 		}
 
-		if(!empty($password) && $cpassword == $password){
+		if(!empty($password) && $cpassword != $password){
             wny()->notification()->build(
                 "cpassword", "Password", new AlertMessage(
                     AlertMessage::ERROR, MSG_PASSWORD_NOT_MATCH

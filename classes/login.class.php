@@ -15,42 +15,14 @@ class wnyLogin{
     public function init(){
 
         //check if submitted
-        if(isset($_POST[WNY_SUBMIT_SIGNUP])){
-
-            echo var_dump($_POST);
+        if(isset($_POST[WNY_SUBMIT_LOGIN])){
 
             $email = sanitize_text_field(trim($_POST["email"]));
             $password = sanitize_text_field(trim($_POST["password"]));
 
             if($this->validate($email, $password)){
 
-                //create user first
-                $user_id = username_exists($email);
 
-                //make user username and email is not taken
-                if(!$user_id && !email_exists($email)){
-
-                    //create user
-                    $user_id = wp_create_user($email, $email, $password);
-
-                    if($user_id instanceof WP_Error){
-                        wny()->notification()->build(
-                            "general", "", new AlertMessage(
-                                AlertMessage::ERROR, MSG_SIGNUP_FAILED
-                            )
-                        );
-                    }
-
-                    //TODO: After successful signup, redirect to login?
-
-                }else{
-                    //do notification here, that username and/or email already exists
-                    wny()->notification()->build(
-                        "general", "", new AlertMessage(
-                            AlertMessage::ERROR, MSG_EMAIL_EXISTS
-                        )
-                    );
-                }//end of email or username exists
 
             }//end of validate
 
@@ -75,17 +47,6 @@ class wnyLogin{
             wny()->notification()->build(
                 "email", "Email", new AlertMessage(
                     AlertMessage::ERROR, MSG_INVALID_EMAIL
-                )
-            );
-
-            $flag = false;
-        }
-
-        //validate password
-        if(empty($password)){
-            wny()->notification()->build(
-                "password", "Password", new AlertMessage(
-                    AlertMessage::ERROR, MSG_EMPTY_PASSWORD
                 )
             );
 

@@ -10,4 +10,4 @@ define("MSG_LOGIN_SUCCESS", "You have been successfully loggedin");
 define("MSG_SIGNUP_FAILED", "Ops! something went wrong, please try again or contact site owner");
 
 
-define("MSG_TERMS_NOT_AGREE", "You have to understand and agree our terms before you can proceed!");
+define("MSG_TERMS_NOT_AGREE", "You have to understand and agree to our terms before you proceed!");

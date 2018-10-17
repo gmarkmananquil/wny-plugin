@@ -1,6 +1,6 @@
 <form action="" method="post">
 
-    <?php echo wny()->notification()->display(); ?>
+    <?php echo wny()->notification()->display("general"); ?>
 
     <div id="wny-signup" class="form">
 
@@ -13,7 +13,6 @@
         <div class="form-group">
             <label for="">Password</label>
             <input type="password" name="password" id="password" placeholder="Your password" class="input-medium" />
-            <?php echo wny()->notification()->display("password"); ?>
         </div>
 
         <div class="form-group">
@@ -28,7 +27,7 @@
         </div>
 
         <div class="submit-button">
-            <input type="submit" name="<?php echo WNY_SUBMIT_SIGNUP; ?>" value="Login" />
+            <input type="submit" name="<?php echo WNY_SUBMIT_LOGIN; ?>" value="Login" />
         </div>
 
     </div>
