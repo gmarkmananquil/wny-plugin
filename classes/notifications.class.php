@@ -15,7 +15,8 @@ class wnyNotification{
 	}
 	
 	private function getSessionNotification(){
-		return $_SESSION[self::SESSION_NAME];
+	    $session = $_SESSION[self::SESSION_NAME];
+		return ($session != null)?$session:array();
 	}
 	
 	private function setSessionNotification($content){
@@ -36,8 +37,14 @@ class wnyNotification{
 			"field_name" => $field_name,
 			"alert_message" => $alert_message
 		);
-		
-		$this->alerts[] = $alert;
+
+        //if general messages, allow multiple notifications
+		if($field_id == "general"){
+            $this->alerts["general"][] = $alert;
+        }else{
+            $this->alerts[$field_id] = $alert;
+        }
+
 		$this->setSessionNotification($this->alerts);
 	}
 	
@@ -46,12 +53,34 @@ class wnyNotification{
 	 * @param string $field_id
 	 */
 	public function display($field_id = "general"){
-		foreach($this->alerts as $alert){
-			/**
-			 * hook the display template here
-			 */
-			do_action("wny_notification_display", $alert);
-		}
+	    if(count($this->alerts) > 0){
+            foreach($this->alerts as $alert){
+                /**
+                 * hook the display template here
+                 */
+                //do_action("wny_notification_display", $alert);
+                if($field_id == "general"){
+                    foreach($alert as $a){
+                        ?>
+                        <p class="wny-notification wny-notification-general
+                        text-<?php echo $a["alert_message"]->type; ?>"><?php echo $a["alert_message"]->message; ?></p>
+                        <?php
+                    }
+                }else{
+
+                    $temp_field = $alert["field_id"];
+                    if($field_id == $alert["field_id"]){
+                        ?>
+                        <p class="wny-notification wny-notification-<?php echo $temp_field; ?>
+                        text-<?php echo $alert["alert_message"]->type; ?>"><?php echo $alert["alert_message"]->message; ?></p>
+                        <?php
+                    }
+
+                }
+
+
+            }
+        }
 	}
 	
 	public static $instance = null;

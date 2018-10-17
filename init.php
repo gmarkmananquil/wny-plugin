@@ -139,4 +139,6 @@ define("WNY_SUBMIT_SIGNUP",		"wny_submit_signup");
 
 define("WNY_SUBMIT_LOGIN",		"wny_submit_login");
 
+define("WNY_SUBMIT_PRAC_PROFILE", "wny_submit_prac_profile");
+
 

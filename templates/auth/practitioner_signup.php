@@ -396,8 +396,7 @@
         </div>-->
         
         <div id="submit-button">
-            <input type="hidden" name="action" value="<?php echo PRAC_SIGNUP_ACTION; ?>" />
-            <input type="submit" name="<?php echo WNY_SUBMIT_NAME; ?>" id="<?php echo WNY_SUBMIT_NAME; ?>" class="wny-button-submit" value="Create account" />
+            <input type="submit" name="<?php echo WNY_SUBMIT_PRAC_PROFILE; ?>" id="<?php echo WNY_SUBMIT_NAME; ?>" class="wny-button-submit" value="Create account" />
         </div>
     
     </div> <!--#wny-create-practitioner -->

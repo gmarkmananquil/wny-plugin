@@ -16,11 +16,13 @@ class wnySignup{
 		
 		//check if submitted
 		if(isset($_POST[WNY_SUBMIT_SIGNUP])){
-		
-			$email = sanitize_text_field(trim($_POST["email"]));
+
+		    $email = sanitize_text_field(trim($_POST["email"]));
 			$password = sanitize_text_field(trim($_POST["password"]));
-			
-			if($this->validate($email, $password)){
+			$cpassword = sanitize_text_field(trim($_POST["cpassword"]));
+            $terms = sanitize_text_field(trim($_POST["term-agreement"]));
+
+			if($this->validate($email, $password, $cpassword, $terms)){
 				
 				//create user first
 				$user_id = username_exists($email);
@@ -64,7 +66,7 @@ class wnySignup{
 	 * @param $password
 	 * @return bool
 	 */
-	private function validate($email, $password){
+	private function validate($email, $password, $cpassword, $terms){
 		
 		$flag = true;
 		
@@ -89,7 +91,27 @@ class wnySignup{
 			
 			$flag = false;
 		}
-		
+
+		if(!empty($password) && $cpassword == $password){
+            wny()->notification()->build(
+                "cpassword", "Password", new AlertMessage(
+                    AlertMessage::ERROR, MSG_PASSWORD_NOT_MATCH
+                )
+            );
+
+            $flag = false;
+        }
+
+        if(empty($terms)){
+            wny()->notification()->build(
+                "general", "", new AlertMessage(
+                    AlertMessage::ERROR, MSG_TERMS_NOT_AGREE
+                )
+            );
+
+            $flag = false;
+        }
+
 		//return true if validation successful, false if there was error
 		return $flag;
 	}
@@ -100,7 +122,7 @@ class wnySignup{
 	 */
 	public function generateShortcode(){
 		ob_start();
-		require_once WNY_TEMPLATE_PATH . DS . "auth" . DS . "practitioner_signup.php";
+		require_once WNY_TEMPLATE_PATH . DS . "auth" . DS . "signup.php";
 		return ob_get_clean();
 	}
 	

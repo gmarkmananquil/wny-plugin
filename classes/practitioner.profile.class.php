@@ -9,15 +9,13 @@ class wnyPractitionerProfile{
 	public function __construct(){
 		add_action("init",		array($this, 		"init"));
 		
-		//add_shortcode("wny_practitioner_signup", array($this, "generateShortcode"));
+		add_shortcode("wny_practitioner_profile", array($this, "generateShortcode"));
 	}
 	
 	public function init(){
 		
-		echo var_dump($_POST);
-		
 		//check if submitted
-		if(isset($_POST[WNY_SUBMIT_SIGNUP])){
+		if(isset($_POST[WNY_SUBMIT_PRAC_PROFILE])){
 			
 			$action = trim($_POST["action"]);
 			

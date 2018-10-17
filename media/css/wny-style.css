@@ -13,6 +13,54 @@
 .form .form-group{
     margin: 10px 0px;
 }
-.form .form-group label{}
+.form .form-group label{
+}
 .form .form-input-group{}
+
+.form .form-group label,
+    .form .form-input-group{
+    display: inline-block;
+    width: 150px;
+}
+
+.form .input-full{
+    width: 100%;
+}
+
+.form .input-small{
+    width: 150px;
+}
+
+.form .input-medium{
+    width: 250px;
+}
+
+.form .input-large{
+    width: 350px;
+}
+
+.form .form-group label.terms-condition{
+    width: 100%;
+}
+
+
+.wny-notification{font-size: 0.8em;}
+.wny-notification.text-error{
+    color: red;}
+.wny-notification.text-info{
+    color: darkblue;
+}
+.wny-notification.text-success{
+    color: green;
+}
+
+.wny-notification-general{
+    padding: 10px;
+    border: 1px solid;
+}
+
+
+.wny-notification-general.text-error{
+    border-color: red;
+}
 
